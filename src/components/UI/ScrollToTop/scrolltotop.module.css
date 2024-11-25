@@ -1,0 +1,77 @@
+.totop {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(20, 20, 20);
+    box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253);
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 40px;
+    right: 30px;
+    z-index: 1000;
+    transition: scale 0.3s case-in-out;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.active {
+    opacity: 1 !important;
+    animation: aniBackToTop 0.5s ease-in-out;
+}
+
+.totop:active {
+    scale: 1.2;
+}
+
+.totop svg {
+    width: 12px;
+    transition-duration: 0.3s;
+}
+
+.totop svg path {
+    fill: white;
+}
+
+.totop:hover {
+    width: 140px;
+    border-radius: 50px;
+    transition-duration: 0.3s;
+    background-color: rgb(0, 0, 0);
+    align-items: center;
+}
+
+.totop:hover svg {
+    transition-duration: 0.3s;
+    transform: translateY(-200%);
+}
+
+.totop:before {
+    position: absolute;
+    bottom: -20px;
+    content: "Back to Top";
+    color: white;
+    transition-duration: 0.3s;
+    font-size: 0px;
+}
+
+.totop:hover::before {
+    opacity: 1;
+    font-size: 13px;
+    transition-duration: 0.3s;
+    bottom: unset;
+}
+
+@keyframes aniBackToTop {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
