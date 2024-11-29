@@ -1,0 +1,16 @@
+a {
+  color: inherit; /* Lấy màu từ thẻ cha */
+  text-decoration: none; /* Bỏ gạch chân */
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 
+
+
+*/
