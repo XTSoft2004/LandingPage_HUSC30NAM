@@ -1,6 +1,8 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 
+import "./time.module.css";
+
 const TimeCountDown = ({ targetDate }) => {
     const [timeLeft, setTimeLeft] = useState({});
     const intervalRef = useRef();
@@ -35,10 +37,10 @@ const TimeCountDown = ({ targetDate }) => {
         <div>
             {timeLeft.days !== undefined ? (
                 <div>
-                    <span>{timeLeft.days}d </span>
-                    <span>{timeLeft.hours}h </span>
-                    <span>{timeLeft.minutes}m </span>
-                    <span>{timeLeft.seconds}s</span>
+                    <span>{timeLeft.days} </span>
+                    <span>{timeLeft.hours} </span>
+                    <span>{timeLeft.minutes} </span>
+                    <span>{timeLeft.seconds}</span>
                 </div>
             ) : (
                 <span>Time's up!</span>
