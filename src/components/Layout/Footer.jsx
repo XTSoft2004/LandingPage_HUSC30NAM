@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer
       className="p-2"
-      style={{ backgroundColor: "#161B22", color: "#fff" }}
+      style={{ backgroundColor: "#07002B", color: "#fff" }}
     >
       <Container>
         <Row>
@@ -80,7 +80,7 @@ const Footer = () => {
                   style={{
                     backgroundColor: "#fff",
                     height: "3px",
-                    width: "40%",
+                    width: "18%",
                   }}
                 ></div>
               </div>
