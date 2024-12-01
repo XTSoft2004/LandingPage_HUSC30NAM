@@ -57,16 +57,10 @@ export default function TimeCountDown() {
             <div className={style.bg}>
                 <p className={`${style.text} neonText`}>Đếm Ngược</p>
                 <div className={`${style.countdown}`}>
-                    {timeLeft.days === 0 && timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0 ? (
-                        <div className={style.timeout}>TimeOut</div>
-                    ) : (
-                        <>
-                            {renderSlideDown(timeLeft.days, prevTimeLeft.days, "Ngày")}
-                            {renderSlideDown(timeLeft.hours, prevTimeLeft.hours, "Giờ")}
-                            {renderSlideDown(timeLeft.minutes, prevTimeLeft.minutes, "Phút")}
-                            {renderSlideDown(timeLeft.seconds, prevTimeLeft.seconds, "Giây")}
-                        </>
-                    )}
+                    {renderSlideDown(timeLeft.days, prevTimeLeft.days, "Ngày")}
+                    {renderSlideDown(timeLeft.hours, prevTimeLeft.hours, "Giờ")}
+                    {renderSlideDown(timeLeft.minutes, prevTimeLeft.minutes, "Phút")}
+                    {renderSlideDown(timeLeft.seconds, prevTimeLeft.seconds, "Giây")}
                 </div>
             </div>
         </>
