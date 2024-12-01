@@ -62,7 +62,7 @@ const data = [
 ];
 
 
-export default function TimeLineHistory1() {
+export default function TimeLineHistory() {
     useEffect(() => {
         return () => {
         };
@@ -72,7 +72,7 @@ export default function TimeLineHistory1() {
             <div className={`${style.bd} w-100`}>
                 <div className={`${style.tl} w-75`}>
                     <div className="d-flex justify-content-between align-items-center flex-column flex-md-row">
-                        <h2 className="neonText text-center text-md-left" style={{ width: "160px", fontSize: "40px"}}>Các Mốc Lịch Sử</h2>
+                        <h2 className="neonText text-center text-md-left" style={{ width: "160px", fontSize: "40px" }}>Các Mốc Lịch Sử</h2>
                         <img src="/images/logo/Logo_Official.png" alt="Logo" className={`${style.logo} mt-3 mt-md-0`} />
                     </div>
                     <div className={`${style.bo}`}></div>
@@ -91,6 +91,10 @@ export default function TimeLineHistory1() {
                             </Col>
                         ))}
                     </Row>
+                    <div className={`${style.text}`} style={{ textAlign: 'right' }}>
+                        <p className={`neonText`}>ITHUSC</p>
+                        <p className={`neonText`}>1995 - 2025</p>
+                    </div>
                 </div>
             </div>
         </>

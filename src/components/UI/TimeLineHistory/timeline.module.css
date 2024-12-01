@@ -62,3 +62,9 @@
     height: 150px;
   }
 }
+
+.text {
+  font-size: 3.0rem;
+  color: #fff;
+  margin-top: 10px;
+}

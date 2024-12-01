@@ -1,9 +1,9 @@
-import TimeLineHistory1 from "@/components/UI/TimeLineHistory1"
+import TimeLineHistory from "@/components/UI/TimeLineHistory"
 
 export default function Sec4() {
     return (
         <>
-            <TimeLineHistory1 />
+            <TimeLineHistory />
         </>
     )
 }
