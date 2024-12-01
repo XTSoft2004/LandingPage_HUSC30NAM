@@ -1,0 +1,42 @@
+@media (max-width: 767px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  .text-white p {
+    font-size: 1.2rem;
+  }
+
+  .bg-white {
+    height: 120px;
+  }
+
+  .position-absolute {
+    position: relative !important;
+  }
+
+  .d-flex {
+    flex-direction: column !important;
+  }
+
+  .text-center {
+    margin-bottom: 20px;
+  }
+
+  img {
+    object-fit: contain;
+    min-height: auto;
+  }
+  .info-husc {
+    margin-top: 700px !important;
+  }
+  .data-husc {
+    margin-top: 700px !important;
+  }
+}
+
+@media (min-width: 767px) {
+  .title-center {
+    text-align: center;
+  }
+}
