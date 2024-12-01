@@ -1,52 +1,74 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
 
-import "./time.module.css";
+import { useState, useEffect } from "react";
+import style from "./time.module.css";
 
-const TimeCountDown = ({ targetDate }) => {
-    const [timeLeft, setTimeLeft] = useState({});
-    const intervalRef = useRef();
+export default function TimeCountDown() {
+    const targetDate = new Date("2025-06-01").getTime();
+    const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+    const [prevTimeLeft, setPrevTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
     useEffect(() => {
-        if (typeof window !== 'undefined') {
-            intervalRef.current = setInterval(() => {
-                setTimeLeft(calcTimeLeft());
-            }, 1000);
-        }
-
-        return () => clearInterval(intervalRef.current);
+        setTimeLeft(calcTimeLeft());
+        setPrevTimeLeft(calcTimeLeft());
     }, []);
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setPrevTimeLeft(timeLeft);
+            setTimeLeft(calcTimeLeft());
+        }, 1000);
+
+        return () => clearInterval(interval);
+    }, [timeLeft]);
+
     function calcTimeLeft() {
-        const diff = +new Date(targetDate) - +new Date();
-        let timeLeft = {};
+        const now = new Date().getTime();
+        const difference = targetDate - now;
 
-        if (diff > 0) {
-            timeLeft = {
-                days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-                hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
-                minutes: Math.floor((diff / 1000 / 60) % 60),
-                seconds: Math.floor((diff / 1000) % 60),
-            };
-        }
+        if (difference <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
 
-        return timeLeft;
+        return {
+            days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+            hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+            minutes: Math.floor((difference / (1000 * 60)) % 60),
+            seconds: Math.floor((difference / 1000) % 60),
+        };
     }
 
-    return (
-        <div>
-            {timeLeft.days !== undefined ? (
-                <div>
-                    <span>{timeLeft.days} </span>
-                    <span>{timeLeft.hours} </span>
-                    <span>{timeLeft.minutes} </span>
-                    <span>{timeLeft.seconds}</span>
+    const renderSlideDown = (value, prevValue, label) => (
+        <div className={`${style.timebox}`}>
+            <div className={`${style.slidewrapper}`}>
+                {prevValue !== value && (
+                    <div key={`prev-${prevValue}`} className={`${style.time} ${style.old}`}>
+                        {prevValue < 10 ? `0${prevValue}` : prevValue}
+                    </div>
+                )}
+                <div key={`new-${value}`} className={`${style.time} ${style.new}`}>
+                    {value < 10 ? `0${value}` : value}
                 </div>
-            ) : (
-                <span>Time's up!</span>
-            )}
+            </div>
+            <div className={`${style.label}`}>{label}</div>
         </div>
     );
-};
 
-export default TimeCountDown;
+    return (
+        <>
+            <div className={style.bg}>
+                <p className={`${style.text} neonText`}>Đếm Ngược</p>
+                <div className={`${style.countdown}`}>
+                    {timeLeft.days === 0 && timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0 ? (
+                        <div className={style.timeout}>TimeOut</div>
+                    ) : (
+                        <>
+                            {renderSlideDown(timeLeft.days, prevTimeLeft.days, "Ngày")}
+                            {renderSlideDown(timeLeft.hours, prevTimeLeft.hours, "Giờ")}
+                            {renderSlideDown(timeLeft.minutes, prevTimeLeft.minutes, "Phút")}
+                            {renderSlideDown(timeLeft.seconds, prevTimeLeft.seconds, "Giây")}
+                        </>
+                    )}
+                </div>
+            </div>
+        </>
+    );
+}
