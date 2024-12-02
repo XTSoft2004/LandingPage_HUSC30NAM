@@ -43,9 +43,11 @@ export default function Home() {
       {/* Truyền activeSection vào Navbar */}
       <Navbar activeSection={activeSection} />
       {/* Các section truyền setActiveSection để cập nhật */}
-      <section className="bg-sec1 vh-100">
+      <section className="bg-sec1">
         <Sec1 />
-        <section ref={ref1}>{/* <Sec2 /> */}</section>
+        <section ref={ref1}>
+          <Sec2 />
+        </section>
       </section>
       <Sec3 />
       <section ref={ref2}>

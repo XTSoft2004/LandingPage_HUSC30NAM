@@ -53,6 +53,7 @@ export default function Sec1() {
                   Trường Đại học Khoa học, Đại học Huế
                 </h3>
                 <h4
+                  className="d-none d-md-block mt-3"
                   style={{
                     color: "#ddb61a",
                     fontWeight: "bold",
@@ -61,6 +62,19 @@ export default function Sec1() {
                   }}
                 >
                   01/06/1995 - 01/06/2025
+                </h4>
+                <h4
+                  className="d-md-none d-block mt-3"
+                  style={{
+                    color: "#ddb61a",
+                    fontWeight: "bold",
+                    textAlign: "center",
+                    fontSize: "2.0rem",
+                    lineHeight: "0.9",
+                  }}
+                >
+                  01/06/1995 <br /> - <br />
+                  01/06/2025
                 </h4>
               </div>
             </Col>

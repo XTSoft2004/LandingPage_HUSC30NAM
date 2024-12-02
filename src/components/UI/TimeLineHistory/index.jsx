@@ -108,7 +108,7 @@ export default function TimeLineHistory() {
               </Col>
             ))}
           </Row>
-          <Row className="d-flex flex-md-row flex-column">
+          <Row className="d-flex flex-md-row flex-column mt-3">
             <Col>
               <Image
                 className="d-none d-md-block w-25 align-self-center py-4"
