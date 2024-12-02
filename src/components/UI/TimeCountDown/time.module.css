@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     gap: 20px;
+    align-items: center;
 }
 
 .timebox {
@@ -17,7 +18,6 @@
 .slidewrapper {
     position: relative;
     overflow: hidden;
-    height: 3rem;
     width: 150px;
     height: 90px;
     display: flex;
@@ -72,13 +72,11 @@
 }
 
 .text {
-    font-size: 4.0rem;
     font-weight: bold;
     text-align: center;
 }
 
-.separator
-{
+.separator {
     font-size: 4.0rem;
     font-weight: bold;
     text-align: center;
@@ -90,16 +88,32 @@
         font-size: 2.5rem;
     }
 
-    .slidewrapper{
+    .slidewrapper {
         width: 100px;
         height: 60px;
-    }
-
-    .text {
-        font-size: 2.5rem;
     }
 
     .separator {
         font-size: 2.5rem;
     }
+}
+
+@media (max-width: 768px) {
+    .time {
+        font-size: 2.5rem;
+    }
+
+    .slidewrapper {
+        width: 80px;
+        height: 50px;
+    }
+
+    .separator {
+        display: none;
+    }
+
+    .countdown {
+        flex-direction: column;
+    }
+
 }

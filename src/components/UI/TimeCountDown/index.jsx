@@ -25,7 +25,7 @@ export default function TimeCountDown() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setPrevTimeLeft(timeLeft);
+      setPrevTimeLeft((prev) => ({ ...prev, ...timeLeft }));
       setTimeLeft(calcTimeLeft());
     }, 1000);
 
@@ -72,8 +72,8 @@ export default function TimeCountDown() {
   return (
     <>
       <div className={`text-white py-5`}>
-        <p className={`${style.text} neonText`}>Đếm Ngược</p>
-        <div className={`${style.countdown}`}>
+        <p className={`${style.text} neonText`} style={{ fontSize: "4.0rem" }}>Đếm Ngược</p>
+        <div className={`${style.countdown} ${style.responsiveCountdown}`}>
           {renderSlideDown(timeLeft.days, prevTimeLeft.days, "Ngày")}
           {renderSeparator()}
           {renderSlideDown(timeLeft.hours, prevTimeLeft.hours, "Giờ")}
