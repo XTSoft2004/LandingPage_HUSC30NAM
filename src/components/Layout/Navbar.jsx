@@ -17,7 +17,7 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 import Link from "next/link";
-const Index = () => {
+const Index = ({ name, children }) => {
   const pathname = usePathname(); // Call usePathname at the top level
   const [url, setUrl] = useState("");
 

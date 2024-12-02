@@ -5,7 +5,7 @@ import "../../../styles/sec2.css";
 const BorderLight = () => {
   return (
     <div
-      className="bg-white mx-3"
+      className="bg-white mx-3 bd-light-doc"
       style={{ width: "5px", height: "180px" }}
     ></div>
   );
@@ -13,38 +13,46 @@ const BorderLight = () => {
 
 import jsonNhungConSo from "@/data/nhungconsonoibat.json"; // Import the data if it's in a separate JSON file
 
-const ItemFace = ({ number, name, lst }) => {
+const ItemFace = ({ number, name, lst, showBorderLight }) => {
   return (
-    <div className="item-face text-center">
-      <div className="face-1">
-        <h1
-          style={{
-            fontSize: "7rem",
-          }}
-          className="fw-bold m-0 display-1"
-        >
-          {number}
-        </h1>
-        <p className="text-uppercase fw-bold m-0 fs-4">{name}</p>
-      </div>
-      <div className="face-2">
-        <div className="text-center fs-3">
-          {lst.map((item, index) => (
-            <p key={index}>
-              <b>{item.number || "N/A"}</b> {item.name}
-            </p>
-          ))}
+    <>
+      <div className="item-face text-center">
+        <div className="face-1">
+          <h1
+            style={{
+              fontSize: "7rem",
+            }}
+            className="fw-bold m-0 display-1"
+          >
+            {number}
+          </h1>
+          <p className="text-uppercase fw-bold m-0 fs-4">{name}</p>
+        </div>
+        <div className="face-2">
+          <div className="text-center fs-3">
+            {lst.map((item, index) => (
+              <p key={index}>
+                <b>{item.number || ""} </b>
+                {item.name}
+              </p>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+      {showBorderLight && <BorderLight />}
+      <div
+        className="d-none align-self-center glow-div my-3 bd-light-ngang"
+        style={{ backgroundColor: "#fff", height: "4px", width: "27%" }}
+      ></div>
+    </>
   );
 };
-export default function Sec1() {
+export default function Sec1({ name, children }) {
   return (
     <div id="sec-2" className="w-100 bg-sec2 py-3">
       <Container>
         <Row>
-          <h1 className="fw-bold overlay-text text-center text-white my-5 home__title">
+          <h1 className="fw-bold overlay-text text-center text-white my-5 home__title text-uppercase">
             Tổng quan
           </h1>
         </Row>
@@ -90,14 +98,14 @@ export default function Sec1() {
         <Row>
           <div className="d-flex my-4">
             <div
-              className="d-none d-md-block align-self-center glow-div"
+              className="d-none d-md-block align-self-center"
               style={{ backgroundColor: "#fff", height: "4px", width: "27%" }}
             ></div>
             <p className="text-white fw-bold text-center mx-5 fs-1">
               NHỮNG CON SỐ NỔI BẬT
             </p>
             <div
-              className="d-none d-md-block align-self-center glow-div"
+              className="d-none d-md-block align-self-center"
               style={{ backgroundColor: "#fff", height: "4px", width: "27%" }}
             ></div>
           </div>
@@ -122,137 +130,22 @@ export default function Sec1() {
             className="info-husc align-self-center position-absolute top-50 start-50 translate-middle d-flex justify-content-evenly align-items-center w-100 text-white"
             // style={{ textShadow: "1px 1px 4px rgba(0, 0, 0, 0.8)" }}
           >
-            <div className="item-face text-center">
-              <div className="face-1">
-                <h1
-                  style={{
-                    fontSize: "7rem",
-                  }}
-                  className="fw-bold m-0 display-1"
-                >
-                  26
-                </h1>
-                <p className="text-uppercase fw-bold m-0 fs-4">
-                  Viên chức & người lao động
-                </p>
-              </div>
-              <div className="face-2">
-                <div className="text-center fs-3">
-                  <p>
-                    <b>06</b> Phó giáo sư tiến sĩ
-                  </p>
-                  <p>
-                    <b>09</b> Tiến sĩ
-                  </p>
-                  <p>
-                    <b>10</b> Thạc sĩ
-                  </p>
-                  <p>
-                    <b>02</b> Trợ giảng
-                  </p>
-                  <p>
-                    <b>01</b> Văn thư
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <BorderLight />
-
-            <div className="item-face text-center">
-              <div className="face-1">
-                <h1
-                  style={{
-                    fontSize: "7rem",
-                  }}
-                  className="fw-bold m-0 display-1"
-                >
-                  03
-                </h1>
-                <p className="text-uppercase fw-bold m-0 fs-4">
-                  bộ môn chuyên ngành
-                </p>
-              </div>
-              <div className="face-2">
-                <div className="text-center fs-3">
-                  <p>Công nghệ phần mềm</p>
-                  <p>Khoa học máy tính</p>
-                  <p>Mạng máy tính</p>
-                </div>
-              </div>
-            </div>
-
-            <BorderLight />
-
-            <div className="item-face text-center">
-              <div className="face-1">
-                <h1
-                  style={{
-                    fontSize: "7rem",
-                  }}
-                  className="fw-bold m-0 display-1"
-                >
-                  02
-                </h1>
-                <p className="text-uppercase fw-bold m-0 fs-4">
-                  ngành đào tạo Đại học
-                </p>
-              </div>
-              <div className="face-2">
-                <div className="text-center fs-3">
-                  <p>Công nghệ thông tin</p>
-                  <p>Kỹ thuật phần mềm</p>
-                </div>
-              </div>
-            </div>
-
-            <BorderLight />
-
-            <div className="item-face text-center">
-              <div className="face-1">
-                <h1
-                  style={{
-                    fontSize: "7rem",
-                  }}
-                  className="fw-bold m-0 display-1"
-                >
-                  02
-                </h1>
-                <p className="text-uppercase fw-bold m-0 fs-4">
-                  ngành đào tạo Thạc sĩ
-                </p>
-              </div>
-              <div className="face-2">
-                <div className="text-center fs-3">
-                  <p>Khoa học máy tính</p>
-                  <p>Quản lí công nghệ thông tin</p>
-                </div>
-              </div>
-            </div>
-
-            <BorderLight />
-
-            <div className="item-face text-center pe-2">
-              <div className="face-1">
-                <h1
-                  style={{
-                    fontSize: "7rem",
-                  }}
-                  className="fw-bold m-0 display-1"
-                >
-                  01
-                </h1>
-                <p className="text-uppercase fw-bold m-0 fs-4">
-                  ngành đào tạo Tiến sĩ
-                </p>
-              </div>
-              <div className="face-2">
-                <div className="text-center fs-3">
-                  <p>Khoa học máy tính</p>
-                </div>
-              </div>
-            </div>
+            {jsonNhungConSo.map((item, index) => (
+              <ItemFace
+                key={index}
+                number={item.number}
+                name={item.name}
+                lst={item.lst}
+                showBorderLight={index !== jsonNhungConSo.length - 1}
+              />
+            ))}
           </div>
+        </Row>
+
+        <Row>
+          <button className="mx-auto w-25 btn-gold text-uppercase rounded-pill fs-4 my-3">
+            <a href="https://it.husc.edu.vn/">Tìm hiểu thêm</a>
+          </button>
         </Row>
       </Container>
     </div>

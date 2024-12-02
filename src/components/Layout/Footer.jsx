@@ -85,28 +85,28 @@ const Footer = () => {
                 ></div>
               </div>
             </Row>
-            <Row className="mb-2">
-              <Link href="https://www.facebook.com/ithusc">
+            <Row className="mb-2 item-link">
+              <Link href="https://it.husc.edu.vn/">
                 <i className="bi bi-chevron-right fw-bold me-2"></i>
                 Khoa Công nghệ thông tin
               </Link>
             </Row>
-            <Row className="mb-2">
-              <Link href="https://www.facebook.com/ithusc">
+            <Row className="mb-2 item-link">
+              <Link href="https://hueuni.edu.vn/portal/vi/">
                 <i className="bi bi-chevron-right fw-bold me-2"></i>
                 Đại học Huế
               </Link>
             </Row>
-            <Row className="mb-2">
-              <Link href="https://www.facebook.com/ithusc">
+            <Row className="mb-2 item-link">
+              <Link href="https://husc.edu.vn/">
                 <i className="bi bi-chevron-right fw-bold me-2"></i>
-                Trường đại học Khoa học
+                Trường Đại học Khoa học
               </Link>
             </Row>
-            <Row className="mb-2">
-              <Link href="https://www.facebook.com/ithusc">
+            <Row className="mb-2 item-link">
+              <Link href="https://ums.husc.edu.vn/">
                 <i className="bi bi-chevron-right fw-bold me-2"></i>
-                Trang thông tin đào tạo chính chỉ
+                Trang thông tin đào tạo tín chỉ
               </Link>
             </Row>
           </Col>

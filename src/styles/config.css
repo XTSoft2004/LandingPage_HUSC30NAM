@@ -36,12 +36,6 @@ h1 {
 }
 
 .navbar-active {
-  background-color: initial; /* Màu mặc định */
-  color: initial; /* Màu chữ mặc định */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Hiệu ứng mượt */
-}
-
-.navbar-active:hover {
   background-color: var(--bg-yellow-base); /* Màu khi hover */
   color: #000 !important; /* Màu chữ khi hover */
 }
