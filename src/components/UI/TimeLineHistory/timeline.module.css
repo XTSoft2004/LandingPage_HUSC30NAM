@@ -8,15 +8,15 @@
 }
 
 .bo {
-  width: 260px;
-  border-bottom: 2px solid #fff;
+  width: 30%;
+  border-bottom: 4px solid #fff;
   margin-bottom: 50px;
 }
 
 .timelineItem {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
   padding: 10px 0 10px 20px;
   border-bottom: 2px solid #fff;
 }
@@ -60,6 +60,13 @@
   .logo {
     width: 150px;
     height: 150px;
+  }
+
+  .bo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin: 0 auto;
+    width: 50%;
   }
 }
 

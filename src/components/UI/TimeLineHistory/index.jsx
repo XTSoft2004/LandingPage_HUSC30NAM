@@ -4,7 +4,7 @@ import style from "./timeline.module.css";
 
 const data = [
   {
-    date: "13.12",
+    date: "13/12",
     year: "1994",
     description: (
       <>
@@ -14,7 +14,7 @@ const data = [
     ),
   },
   {
-    date: "01.06",
+    date: "01/06",
     year: "1995",
     description: (
       <>
@@ -72,28 +72,36 @@ export default function TimeLineHistory() {
       <div className={`${style.bd} w-100 bg-sec4 py-5`}>
         <div className={`${style.tl} w-75`}>
           <div className="d-flex justify-content-between align-items-center flex-column flex-md-row">
-            <h2
-              className="neonText text-center text-md-left"
-              style={{ width: "160px", fontSize: "40px" }}
+            <h1
+              className="neonText text-center text-md-left text-uppercase"
+              // style={{ width: "160px", fontSize: "40px" }}
             >
               Các Mốc Lịch Sử
-            </h2>
+            </h1>
             <img
               src="/images/logo/Logo_Official.png"
               alt="Logo"
-              className={`${style.logo} mt-3 mt-md-0`}
+              className={`${style.logo} mt-3 mt-md-0 d-none d-lg-block`}
             />
           </div>
-          <div className={`${style.bo}`}></div>
+          <div className={`${style.bo} glow-div`}></div>
           <Row>
             {data.map((milestone, index) => (
               <Col key={index} xs={12}>
                 <div className={style.timelineItem}>
-                  <div className={style.timelineDate}>
-                    <div>{milestone.date}</div>
-                    <div>{milestone.year}</div>
+                  <div
+                    className={`${style.timelineDate} fw-bold text-uppercase`}
+                  >
+                    <p style={{ textAlign: "left" }} className="fs-1 my-0">
+                      {milestone.date}
+                    </p>
+                    <p style={{ textAlign: "left" }} className="fs-1 my-0">
+                      {milestone.year}
+                    </p>
                   </div>
-                  <div className={`${style.timelineContent} fs-3`}>
+                  <div
+                    className={`${style.timelineContent} fs-3 mt-1 align-self-center`}
+                  >
                     {milestone.description}
                   </div>
                 </div>

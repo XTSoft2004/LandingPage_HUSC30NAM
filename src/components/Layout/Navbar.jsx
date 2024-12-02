@@ -74,7 +74,7 @@ const Index = ({ activeSection }) => {
 
           <Navbar.Collapse id="basic-navbar-nav" style={{ flexGrow: 0 }}>
             <Nav
-              className="d-none d-lg-flex w-100 justify-content-end rounded-pill"
+              className="d-none d-md-block d-lg-flex w-100 justify-content-end rounded-pill"
               style={{ border: "3px solid #fff" }}
             >
               <Nav>

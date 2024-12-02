@@ -25,7 +25,7 @@ export default function Sec1() {
                   className="d-flex p-3 mb-3 "
                 >
                   <div
-                    className="glow-div me-2"
+                    className="glow-div me-4"
                     style={{
                       backgroundColor: "#fff",
                       color: "transparent",
@@ -69,7 +69,7 @@ export default function Sec1() {
               md={4}
               className="d-flex align-items-start justify-content-start"
             >
-              <img src="/images/logo/Logo_CNTT30Nam.png" alt="Logo30Nam" />
+              <img src="/images/logo/logo_CNTT_30NAM.png" alt="Logo30Nam" />
             </Col>
           </Row>
         </Container>
