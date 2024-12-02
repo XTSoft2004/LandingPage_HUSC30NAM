@@ -1,6 +1,6 @@
 import { Row, Col, Container } from "react-bootstrap";
 import Image from "next/image";
-import bg from "../../../../public/images/background/BG_HUSC.jpg";
+// import bg from "@p/images/background";
 import "../../../styles/sec2.css";
 const BorderLight = () => {
   return (
@@ -8,6 +8,35 @@ const BorderLight = () => {
       className="bg-white mx-3"
       style={{ width: "5px", height: "180px" }}
     ></div>
+  );
+};
+
+import jsonNhungConSo from "@/data/nhungconsonoibat.json"; // Import the data if it's in a separate JSON file
+
+const ItemFace = ({ number, name, lst }) => {
+  return (
+    <div className="item-face text-center">
+      <div className="face-1">
+        <h1
+          style={{
+            fontSize: "7rem",
+          }}
+          className="fw-bold m-0 display-1"
+        >
+          {number}
+        </h1>
+        <p className="text-uppercase fw-bold m-0 fs-4">{name}</p>
+      </div>
+      <div className="face-2">
+        <div className="text-center fs-3">
+          {lst.map((item, index) => (
+            <p key={index}>
+              <b>{item.number || "N/A"}</b> {item.name}
+            </p>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 };
 export default function Sec1() {
@@ -86,7 +115,7 @@ export default function Sec1() {
           <img
             className="d-none d-md-block position-absolute w-100 h-100 rounded-5"
             style={{ objectFit: "cover" }}
-            src="images/background/BG_NhungConSo.png"
+            src="images/background/BG_NhungConSo.jpg"
             alt="Background"
           />
           <div
@@ -107,13 +136,23 @@ export default function Sec1() {
                   Viên chức & người lao động
                 </p>
               </div>
-              <div className="d-none face-2">
+              <div className="face-2">
                 <div className="text-center fs-3">
-                  <p>06 phó giáo sư tiến sĩ</p>
-                  <p>09 tiến sĩ</p>
-                  <p>10 thạc sĩ</p>
-                  <p>02 trợ giảng</p>
-                  <p>01 văn thư</p>
+                  <p>
+                    <b>06</b> Phó giáo sư tiến sĩ
+                  </p>
+                  <p>
+                    <b>09</b> Tiến sĩ
+                  </p>
+                  <p>
+                    <b>10</b> Thạc sĩ
+                  </p>
+                  <p>
+                    <b>02</b> Trợ giảng
+                  </p>
+                  <p>
+                    <b>01</b> Văn thư
+                  </p>
                 </div>
               </div>
             </div>
@@ -134,7 +173,7 @@ export default function Sec1() {
                   bộ môn chuyên ngành
                 </p>
               </div>
-              <div className="d-none face-2">
+              <div className="face-2">
                 <div className="text-center fs-3">
                   <p>Công nghệ phần mềm</p>
                   <p>Khoa học máy tính</p>
@@ -159,7 +198,7 @@ export default function Sec1() {
                   ngành đào tạo Đại học
                 </p>
               </div>
-              <div className="d-none face-2">
+              <div className="face-2">
                 <div className="text-center fs-3">
                   <p>Công nghệ thông tin</p>
                   <p>Kỹ thuật phần mềm</p>
@@ -183,7 +222,7 @@ export default function Sec1() {
                   ngành đào tạo Thạc sĩ
                 </p>
               </div>
-              <div className="d-none face-2">
+              <div className="face-2">
                 <div className="text-center fs-3">
                   <p>Khoa học máy tính</p>
                   <p>Quản lí công nghệ thông tin</p>
@@ -207,7 +246,7 @@ export default function Sec1() {
                   ngành đào tạo Tiến sĩ
                 </p>
               </div>
-              <div className="d-none face-2">
+              <div className="face-2">
                 <div className="text-center fs-3">
                   <p>Khoa học máy tính</p>
                 </div>

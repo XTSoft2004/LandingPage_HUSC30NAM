@@ -1,0 +1,76 @@
+[
+    {
+        "number": "26",
+        "name": "Viên chức & Người lao động",
+        "lst": [
+            {
+                "number": "06",
+                "name": "Phó giáo sư tiến sĩ"
+            },
+            {
+                "number": "09",
+                "name": "Tiến sĩ"
+            },
+            {
+                "number": "10",
+                "name": "Thạc sĩ"
+            },
+            {
+                "number": "02",
+                "name": "Trợ giảng"
+            },
+            {
+                "number": "01",
+                "name": "Văn thư"
+            }
+        ]
+    },
+    {
+        "number": "03",
+        "name": "Bộ môn chuyên ngành",
+        "lst": [
+            {
+                "name": "Công nghệ phần mềm"
+            },
+            {
+                "name": "Khoa học máy tính"
+            },
+            {
+                "name": "Mạng máy tính"
+            }
+        ]
+    },
+    {
+        "number": "02",
+        "name": "Ngành đào tạo Đại học",
+        "lst": [
+            {
+                "name": "Công nghệ thông tin"
+            },
+            {
+                "name": "Kỹ thuật phần mềm"
+            }
+        ]
+    },
+    {
+        "number": "02",
+        "name": "Ngành đào tạo Thạc sĩ",
+        "lst": [
+            {
+                "name": "Khoa học máy tính"
+            },
+            {
+                "name": "Quản lí công nghệ thông tin"
+            }
+        ]
+    },
+    {
+        "number": "01",
+        "name": "Ngành đào tạo Tiến sĩ",
+        "lst": [
+            {
+                "name": "Khoa học máy tính"
+            }
+        ]
+    }
+]
