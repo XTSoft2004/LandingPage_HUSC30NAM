@@ -72,3 +72,14 @@ h1 {
   position: relative;
   z-index: 2; /* Để nội dung không bị che bởi lớp phủ */
 }
+
+@media (max-width: 1024px) {
+  img {
+      width: 350px;
+      height: 350px;
+  }
+
+  .tl {
+      font-size: 1.5rem;
+  }
+}

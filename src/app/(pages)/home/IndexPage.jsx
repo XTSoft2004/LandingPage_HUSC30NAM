@@ -2,11 +2,16 @@
 
 import React from "react";
 
-import TimeCountDown from "@/components/UI/TimeCountDown";
+import Sec1 from "./Sec1";
+import Sec2 from "./Sec2";
+import Sec4 from "./Sec4";
+
 export default function IndexPage() {
-  return (
-    <>
-      <TimeCountDown targetDate="2025-01-01T00:00:00" />
-    </>
-  );
+    return (
+        <>
+            <Sec1 />
+            <Sec2 />
+            <Sec4 />
+        </>
+    )
 }
