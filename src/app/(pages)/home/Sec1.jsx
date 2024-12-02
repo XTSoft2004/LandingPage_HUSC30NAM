@@ -57,6 +57,7 @@ export default function Sec1() {
                     color: "#ddb61a",
                     fontWeight: "bold",
                     textAlign: "center",
+                    fontSize: "2.0rem",
                   }}
                 >
                   01/06/1995 - 01/06/2025
