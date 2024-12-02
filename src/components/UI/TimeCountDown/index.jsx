@@ -61,8 +61,12 @@ export default function TimeCountDown() {
           {value < 10 ? `0${value}` : value}
         </div>
       </div>
-      <div className={`${style.label}`}>{label}</div>
+      <div className={`${style.label}`} style={{ marginTop: "15px" }}>{label}</div>
     </div>
+  );
+
+  const renderSeparator = () => (
+    <div className={`${style.separator}`}>:</div>
   );
 
   return (
@@ -71,8 +75,11 @@ export default function TimeCountDown() {
         <p className={`${style.text} neonText`}>Đếm Ngược</p>
         <div className={`${style.countdown}`}>
           {renderSlideDown(timeLeft.days, prevTimeLeft.days, "Ngày")}
+          {renderSeparator()}
           {renderSlideDown(timeLeft.hours, prevTimeLeft.hours, "Giờ")}
+          {renderSeparator()}
           {renderSlideDown(timeLeft.minutes, prevTimeLeft.minutes, "Phút")}
+          {renderSeparator()}
           {renderSlideDown(timeLeft.seconds, prevTimeLeft.seconds, "Giây")}
         </div>
       </div>
