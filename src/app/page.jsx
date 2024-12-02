@@ -1,7 +1,7 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import IndexPage from "./(pages)/home/IndexPage";
-import Sec2 from "./(pages)/home/sec2";
+import Sec2 from "./(pages)/home/sec3";
 import Footer from "@/components/Layout/Footer";
 import Navbar from "@/components/Layout/Navbar";
 import NavbarFake from "@/components/Layout/NavbarFake";
