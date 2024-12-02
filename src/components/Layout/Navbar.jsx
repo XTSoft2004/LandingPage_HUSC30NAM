@@ -17,17 +17,18 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 import Link from "next/link";
-const Index = ({ name, children }) => {
+const Index = ({ activeSection }) => {
   const pathname = usePathname(); // Call usePathname at the top level
   const [url, setUrl] = useState("");
 
   useEffect(() => {
     setUrl(pathname);
-  }, [pathname]);
+    console.log(`Active section: ${activeSection}`);
+  }, [pathname, activeSection]);
 
   return (
     <>
-      <Navbar style={{ backgroundColor: "#07002B" }}>
+      <Navbar style={{ backgroundColor: "#07002B" }} sticky="top">
         <Container>
           <Navbar.Brand
             className="d-flex justify-content-center logo-nav"
@@ -59,21 +60,27 @@ const Index = ({ name, children }) => {
             >
               <Nav>
                 <Nav.Link
-                  className="fs-3 px-3 fw-bold text-light rounded-pill navbar-active"
+                  className={`fs-3 px-3 fw-bold text-light rounded-pill ${
+                    activeSection === "tong-quan" ? "navbar-active" : ""
+                  }`}
                   href="#tong-quan"
                 >
                   Tổng quan
                 </Nav.Link>
 
                 <Nav.Link
-                  className="fs-3 px-3 ps-3 fw-bold text-light rounded-pill navbar-active"
+                  className={`fs-3 px-3 fw-bold text-light rounded-pill ${
+                    activeSection === "cac-moc-lich-su" ? "navbar-active" : ""
+                  }`}
                   href="#cac-moc-lich-su"
                 >
                   Các mốc lịch sử
                 </Nav.Link>
 
                 <Nav.Link
-                  className="fs-3 px-3 ps-3 fw-bold text-light rounded-pill navbar-active"
+                  className={`fs-3 px-3 fw-bold text-light rounded-pill ${
+                    activeSection === "lich-trinh" ? "navbar-active" : ""
+                  }`}
                   href="#lich-trinh"
                 >
                   Lịch trình

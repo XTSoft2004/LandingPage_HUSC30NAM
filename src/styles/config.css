@@ -35,8 +35,14 @@ h1 {
     0 0 30px #ddd, 0 0 40px #bbb;
 }
 
+/* .navbar-active {
+  background-color: initial; 
+  color: initial; 
+  transition: background-color 0.3s ease, color 0.3s ease;
+} */
+
 .navbar-active {
-  background-color: var(--bg-yellow-base); /* Màu khi hover */
+  background-color: var(--bg-yellow-base) !important; /* Màu khi hover */
   color: #000 !important; /* Màu chữ khi hover */
 }
 
