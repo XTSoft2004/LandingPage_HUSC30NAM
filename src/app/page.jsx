@@ -1,11 +1,15 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import IndexPage from "./(pages)/home/IndexPage";
-import Sec2 from "./(pages)/home/sec3";
+
 import Footer from "@/components/Layout/Footer";
 import Navbar from "@/components/Layout/Navbar";
 import NavbarFake from "@/components/Layout/NavbarFake";
 import { useInView } from "framer-motion";
+import Sec1 from "./(pages)/home/Sec1";
+import Sec2 from "./(pages)/home/Sec2";
+import Sec3 from "./(pages)/home/Sec3";
+import Sec4 from "./(pages)/home/Sec4";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState(""); // Trạng thái section hiện tại
@@ -38,13 +42,16 @@ export default function Home() {
       <Footer /> */}
       {/* Truyền activeSection vào Navbar */}
       <Navbar activeSection={activeSection} />
-
       {/* Các section truyền setActiveSection để cập nhật */}
-      <section ref={ref1}>
-        <Sec2 />
+      <section className="bg-sec1">
+        <Sec1 />
+        <section ref={ref1}>
+          <Sec2 />
+        </section>
       </section>
+      <Sec3 />
       <section ref={ref2}>
-        <IndexPage />
+        <Sec4 />
       </section>
       <Footer />
     </>

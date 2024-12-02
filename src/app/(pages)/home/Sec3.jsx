@@ -143,7 +143,7 @@ export default function Sec1({ name, children }) {
         </Row>
 
         <Row>
-          <button className="mx-auto w-25 btn-gold text-uppercase rounded-pill fs-4 my-3">
+          <button className="mx-auto w-25 btn-gold text-uppercase rounded-pill fs-4 mb-5 mt-2">
             <a href="https://it.husc.edu.vn/">Tìm hiểu thêm</a>
           </button>
         </Row>

@@ -1,6 +1,5 @@
 // src/components/Navbar.js
 "use client"; // Chỉ thị này yêu cầu render phía client
-
 import {
   Nav,
   Container,
@@ -20,15 +19,34 @@ import Link from "next/link";
 const Index = ({ activeSection }) => {
   const pathname = usePathname(); // Call usePathname at the top level
   const [url, setUrl] = useState("");
+  const [nav, setnav] = useState(false);
 
   useEffect(() => {
-    setUrl(pathname);
-    console.log(`Active section: ${activeSection}`);
-  }, [pathname, activeSection]);
+    const handleScroll = () => {
+      setnav(window.scrollY > 0);
+    };
+
+    // Add event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up event listener
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  useEffect(() => {
+    console.log(nav);
+  }, [nav]);
 
   return (
     <>
-      <Navbar style={{ backgroundColor: "#07002B" }} sticky="top">
+      <Navbar
+        style={{
+          background: "transparent",
+          position: "fixed",
+        }}
+        className={`w-100 ${nav ? "aninav" : "none"} sticky-top`}
+      >
         <Container>
           <Navbar.Brand
             className="d-flex justify-content-center logo-nav"
@@ -38,7 +56,7 @@ const Index = ({ activeSection }) => {
               <Image src="/images/logo/logokhoa-trang.webp"></Image>
             </div>
             <div
-              className="ms-2 h-75 align-self-center"
+              className="d-none d-md-block ms-2 h-75 align-self-center"
               style={{
                 borderLeft: "2px solid #fff", // Thêm đường viền trắng 2px
                 // backgroundColor: "#fff", // Màu nền trắng
@@ -48,6 +66,7 @@ const Index = ({ activeSection }) => {
               a
             </div>
             <Image
+              className="d-none d-md-block"
               style={{ width: 90, height: 70 }}
               src="/images/logo/Logo_CNTT.png"
             ></Image>
