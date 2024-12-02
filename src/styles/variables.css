@@ -1,8 +1,6 @@
 :root {
-
+  --bg-yellow-base: #e3b738;
 }
 
-[data-theme="dark"]
-{
-    
+[data-theme="dark"] {
 }
