@@ -71,7 +71,7 @@ export default function TimeCountDown() {
 
   return (
     <>
-      <div className={`text-white py-5`}>
+      <div data-aos="fade-up" className={`text-white py-5`}>
         <p className={`${style.text} neonText`} style={{ fontSize: "4.0rem" }}>
           Đếm Ngược
         </p>

@@ -255,6 +255,7 @@ export default function TimeLine1() {
         </h2>
 
         <div
+          data-aos="fade-up"
           style={{
             textAlign: "center",
             fontWeight: "bold",

@@ -56,7 +56,7 @@ const Footer = () => {
                   className="w-100"
                   style={{ height: "auto", objectFit: "cover" }}
                   src="/images/logo/Logo_Full_Light.png"
-                  alt="Logo Full HUSC"            
+                  alt="Logo Full HUSC"
                 ></Image>
               </Row>
               <Row>

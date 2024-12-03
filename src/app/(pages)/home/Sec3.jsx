@@ -60,7 +60,7 @@ export default function Sec1() {
             Tổng quan
           </h1>
         </Row>
-        <Row>
+        <Row data-aos="fade-up">
           <Row>
             <div className="text-white fs-3 text-start title-center">
               Ngày 13/12/1994, Bộ Giáo dục và Đào tạo ký quyết định thành lập{" "}
@@ -103,13 +103,12 @@ export default function Sec1() {
           />
         </Row>
         <Row>
-          <div className="d-flex my-4">
+          <div data-aos="fade-up" className="d-flex my-4">
             <div
               className="d-none d-md-block align-self-center"
               style={{ backgroundColor: "#fff", height: "4px", width: "27%" }}
             ></div>
             <p
-              data-aos="fade-up"
               data-aos-duration="3000"
               className="text-white fw-bold text-center mx-5 fs-2"
             >
