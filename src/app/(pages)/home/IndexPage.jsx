@@ -7,11 +7,12 @@ import Sec2 from "./Sec2";
 import Sec4 from "./Sec4";
 
 export default function IndexPage() {
-    return (
-        <>
-            <Sec1 />
-            <Sec2 />
-            <Sec4 />
-        </>
-    )
+  return (
+    <>
+      <Sec1 />
+      <Sec2 />
+      <Sec4 />
+      <Sec4 />
+    </>
+  );
 }
