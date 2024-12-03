@@ -1,0 +1,28 @@
+{
+    "title": "Kỷ niệm 30 năm thành lập Khoa Công nghệ Thông tin",
+    "description": "Hân hoan chào mừng kỷ niệm 30 năm thành lập Khoa Công nghệ Thông tin, Trường Đại học Khoa học, Đại học Huế! - Celebrating the 30th Anniversary of the Faculty of Information Technology, University of Science, Hue University!",
+    "keywords": [
+        "Khoa Công nghệ Thông tin",
+        "Trường Đại học Khoa học",
+        "Đại học Huế",
+        "Kỷ niệm 30 năm",
+        "30th Anniversary"
+    ],
+    "author": "XTSoft2004",
+    "robots": "index, follow",
+    "openGraph": {
+        "type": "website",
+        "url": "https://ithusc-30yrs.vercel.app/",
+        "title": "Kỷ niệm 30 năm thành lập Khoa Công nghệ Thông tin",
+        "description": "Hân hoan chào mừng kỷ niệm 30 năm thành lập Khoa Công nghệ Thông tin, Trường Đại học Khoa học, Đại học Huế! - Celebrating the 30th Anniversary of the Faculty of Information Technology, University of Science, Hue University!",
+        "siteName": "Khoa Công nghệ Thông tin",
+        "locale": "vi_VN"
+    },
+    "twitter": {
+        "card": "XTSoft2004",
+        "site": "@XTSoft2004",
+        "creator": "@XTSoft2004",
+        "title": "Kỷ niệm 30 năm thành lập Khoa Công nghệ Thông tin",
+        "description": "Hân hoan chào mừng kỷ niệm 30 năm thành lập Khoa Công nghệ Thông tin, Trường Đại học Khoa học, Đại học Huế! - Celebrating the 30th Anniversary of the Faculty of Information Technology, University of Science, Hue University!"
+    }
+}

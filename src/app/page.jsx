@@ -11,6 +11,8 @@ import Sec2 from "./(pages)/home/Sec2";
 import Sec3 from "./(pages)/home/Sec3";
 import Sec4 from "./(pages)/home/Sec4";
 import Sec5 from "./(pages)/home/Sec5";
+import "aos/dist/aos.css"; // Import AOS styles
+import Aos from "aos";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState(""); // Trạng thái section hiện tại
@@ -34,6 +36,10 @@ export default function Home() {
     }
     // console.log(activeSection);
   }, [inref1, inref2, inref3]);
+
+  useEffect(() => {
+    Aos.init({ duration: 1000 }); // Initialize AOS with a duration
+  }, []);
 
   return (
     <>
