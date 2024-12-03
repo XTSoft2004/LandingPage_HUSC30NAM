@@ -1,5 +1,4 @@
 "use client";
-// app/layout.tsx
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../styles/config.css";
@@ -10,6 +9,7 @@ import ScrollToTop from "@/components/UI/ScrollToTop";
 import Loading from "@/components/UI/Loading";
 import Section from "@/components/Layout/Section";
 import { useEffect } from "react";
+import Head from "next/head"; // Import Head from Next.js
 
 export default function RootLayout({ children }) {
   useEffect(() => {
@@ -18,6 +18,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html suppressHydrationWarning={true} lang="en">
+      <title>IT HUSC - 30 years anniversary</title>
       <body>
         {children}
         <ScrollToTop />
