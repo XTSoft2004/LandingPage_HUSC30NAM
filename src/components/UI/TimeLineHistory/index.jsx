@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import { Row, Col, Image } from "react-bootstrap";
 import style from "./timeline.module.css";
 
@@ -64,30 +64,31 @@ const data = [
 ];
 
 export default function TimeLineHistory() {
-  useEffect(() => {
-    return () => {};
-  }, []);
   return (
     <>
-      <div className={`${style.bd} w-100 bg-sec4 py-5`}>
+      <div id="cac-moc-lich-su" className={`${style.bd} w-100 bg-sec4 py-5`}>
         <div className={`${style.tl} w-75`}>
           <div className="d-flex justify-content-between align-items-center flex-column flex-md-row">
             <h1
+              data-aos="fade-up"
+              data-aos-duration="3000"
               className="neonText text-center text-md-left text-uppercase"
               // style={{ width: "160px", fontSize: "40px" }}
             >
               Các Mốc Lịch Sử
             </h1>
             <img
+              data-aos="fade-left"
               src="/images/logo/Logo_Official.png"
               alt="Logo"
               className={`${style.logo} mt-3 mt-md-0 d-none d-lg-block`}
+              style={{ objectFit: "cover" }}
             />
           </div>
-          <div className={`${style.bo} glow-div`}></div>
+          <div className={`${style.bo} glow-div mb-4`}></div>
           <Row>
             {data.map((milestone, index) => (
-              <Col key={index} xs={12}>
+              <Col div data-aos="fade-up" key={index} xs={12}>
                 <div className={style.timelineItem}>
                   <div
                     className={`${style.timelineDate} fw-bold text-uppercase`}
@@ -111,31 +112,34 @@ export default function TimeLineHistory() {
           <Row className="d-flex flex-md-row flex-column mt-3">
             <Col>
               <Image
-                className="d-none d-md-block w-25 align-self-center py-4"
+                style={{ objectFit: "cover" }}
+                className="d-none d-md-block w-75 align-self-center py-4"
                 src="/images/background/flag.png"
               ></Image>
               <Image
+                style={{ objectFit: "cover" }}
                 className="d-md-none d-block w-100 align-self-center py-4"
                 src="/images/background/flag.png"
               ></Image>
             </Col>
             <Col>
               <div
-                className={`${style.text} py-3`}
+                className={`${style.text} py-3 font-monument`}
                 style={{
                   textAlign: "right",
                   fontSize: "3.3rem",
-                  lineHeight: "0.7",
+                  lineHeight: "1",
                   letterSpacing: "0.7rem",
+                  // fontFamily: "Monument Extended !important",
                 }}
               >
-                <p className={`neonText d-none d-md-block`}>ITHUSC</p>
-                <p className={`neonText d-md-none d-block text-center py-4`}>
+                <p className={`neonText d-none d-lg-block`}>ITHUSC</p>
+                <p className={`neonText d-lg-none d-block text-center py-4`}>
                   ITHUSC
                 </p>
-                <p className={`neonText d-none d-md-block`}>1995 - 2025</p>
+                <p className={`neonText d-none d-lg-block`}>1995 - 2025</p>
                 <p
-                  className={`neonText d-md-none d-block text-center`}
+                  className={`neonText d-lg-none d-block text-center`}
                   style={{ lineHeight: "0.9" }}
                 >
                   1995 <br /> - <br /> 2025

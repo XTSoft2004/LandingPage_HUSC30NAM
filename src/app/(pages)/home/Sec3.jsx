@@ -16,7 +16,7 @@ import jsonNhungConSo from "@/data/nhungconsonoibat.json"; // Import the data if
 const ItemFace = ({ number, name, lst, showBorderLight }) => {
   return (
     <>
-      <div id="cac-moc-lich-su" className="item-face text-center">
+      <div className="item-face text-center">
         <div className="face-1">
           <h1
             style={{
@@ -49,10 +49,14 @@ const ItemFace = ({ number, name, lst, showBorderLight }) => {
 };
 export default function Sec1() {
   return (
-    <div id="sec-2" className="w-100 bg-sec2 py-3">
+    <div id="tong-quan" className="w-100 bg-sec2 py-3">
       <Container>
         <Row>
-          <h1 className="fw-bold overlay-text text-center text-white my-5 home__title text-uppercase">
+          <h1
+            data-aos="fade-up"
+            data-aos-duration="3000"
+            className="fw-bold overlay-text text-center text-white my-5 home__title text-uppercase"
+          >
             Tổng quan
           </h1>
         </Row>
@@ -90,7 +94,10 @@ export default function Sec1() {
         </Row>
         <Row className="my-5">
           <img
-            style={{ borderRadius: "50px" }}
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+            className="w-100 h-100"
+            style={{ borderRadius: "50px", objectFit: "cover" }}
             src="images/background/CacThayCo.png"
             alt="Faculty Image"
           />
@@ -101,7 +108,11 @@ export default function Sec1() {
               className="d-none d-md-block align-self-center"
               style={{ backgroundColor: "#fff", height: "4px", width: "27%" }}
             ></div>
-            <p className="text-white fw-bold text-center mx-5 fs-1">
+            <p
+              data-aos="fade-up"
+              data-aos-duration="3000"
+              className="text-white fw-bold text-center mx-5 fs-2"
+            >
               NHỮNG CON SỐ NỔI BẬT
             </p>
             <div
@@ -121,6 +132,8 @@ export default function Sec1() {
           }}
         >
           <img
+            data-aos="fade-up"
+            data-aos-duration="3000"
             className="d-none d-md-block position-absolute w-100 h-100 rounded-5"
             style={{ objectFit: "cover" }}
             src="images/background/BG_NhungConSo.jpg"
@@ -143,7 +156,10 @@ export default function Sec1() {
         </Row>
 
         <Row>
-          <button className="mx-auto w-25 btn-gold text-uppercase rounded-pill fs-4 mb-5 mt-2">
+          <button
+            data-aos="zoom-in"
+            className="mx-auto w-25 btn-gold text-uppercase rounded-pill fs-4 mb-5 mt-2"
+          >
             <a href="https://it.husc.edu.vn/">Tìm hiểu thêm</a>
           </button>
         </Row>

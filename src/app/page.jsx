@@ -24,15 +24,15 @@ export default function Home() {
 
   useEffect(() => {
     if (inref1) {
-      setActiveSection("tong-quan");
+      setActiveSection(String("tong-quan"));
     }
     if (inref2) {
-      setActiveSection("cac-moc-lich-su");
+      setActiveSection(String("cac-moc-lich-su"));
     }
     if (inref3) {
-      setActiveSection("lich-trinh");
+      setActiveSection(String("lich-trinh"));
     }
-    console.log(activeSection);
+    // console.log(activeSection);
   }, [inref1, inref2, inref3]);
 
   return (

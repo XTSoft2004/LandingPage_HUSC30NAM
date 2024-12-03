@@ -1,0 +1,44 @@
+[
+    {
+        "date": "31/05/2025",
+        "name": "Thứ 7",
+        "lst": [
+            {
+                "time": "07:30",
+                "name": "Tổ chức hội thảo liên kết đào tạo và lễ ký kết",
+                "address": "Hội trường A1, Trường Đại học Khoa học, Đại học Huế"
+            },
+            {
+                "time": "14:00",
+                "name": "Tổ chức hội thảo khoa học",
+                "address": "Hội trường A1, Trường Đại học Khoa học, Đại học Huế"
+            },
+            {
+                "time": "18:00",
+                "name": "Chương trình IT STAR và đêm hội âm nhạc",
+                "address": "Sảnh A Trường Đại học Khoa học, Đại học Huế"
+            }
+        ]
+    },
+    {
+        "date": "01/06/2025",
+        "name": "Chủ nhật",
+        "lst": [
+            {
+                "time": "07:30",
+                "name": "Lễ mít tinh kỷ niệm 30 năm thành lập Khoa",
+                "address": "Sảnh A Trường Đại học Khoa học, Đại học Huế"
+            },
+            {
+                "time": "07:30",
+                "name": "Lễ tọa đàm kỷ niệm 30 năm thành lập Khoa",
+                "address": "Sảnh A Trường Đại học Khoa học, Đại học Huế"
+            },
+            {
+                "time": "11:00",
+                "name": "Giao lưu, dự tiệc kỷ niệm thân mật",
+                "address": "Trường Đại học Khoa học, Đại học Huế"
+            }
+        ]
+    }
+]

@@ -53,9 +53,10 @@ const Footer = () => {
             <Col xs={12} sm={6} lg={4}>
               <Row>
                 <Image
-                  className="w-75"
+                  className="w-100"
+                  style={{ height: "auto", objectFit: "cover" }}
                   src="/images/logo/Logo_Full_Light.png"
-                  alt="Logo Full HUSC"
+                  alt="Logo Full HUSC"            
                 ></Image>
               </Row>
               <Row>
@@ -67,7 +68,7 @@ const Footer = () => {
                     height="130"
                     style={{ border: "none", overflow: "hidden" }}
                     allowFullScreen
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                    // allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                   ></iframe>
                 </div>
               </Row>
@@ -151,7 +152,7 @@ const Footer = () => {
         </Container>
       </footer>
       <footer
-        className="w-100 text-light py-2"
+        className="w-100 text-light p-3"
         style={{ backgroundColor: "#061d5a" }}
       >
         <Container>

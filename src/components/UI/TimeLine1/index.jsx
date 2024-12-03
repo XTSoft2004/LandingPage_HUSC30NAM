@@ -1,10 +1,11 @@
 import React from "react";
 import { Row, Col, Container } from "react-bootstrap";
 import "@/styles/sec5.css";
-const ThanhDocTable = () => {
+const ThanhDocTable = ({ index, height = 0 }) => {
   return (
     <>
       <Col
+        key={index}
         xs={12}
         sm={6}
         lg={2}
@@ -12,13 +13,165 @@ const ThanhDocTable = () => {
         style={{ width: "20px" }}
       >
         <div
+          className="d-none d-lg-block"
           style={{
-            height: "150px", // Chiều cao của thanh dọc
+            height: height == 0 ? "auto" : height, // Chiều cao của thanh dọc
             borderLeft: "5px solid #fff", // Đường viền dọc
           }}
         ></div>
       </Col>
     </>
+  );
+};
+
+import jsonLichTrinh from "@/data/lichtrinh.json"; // Import the data if it's in a separate JSON file
+
+const LichTrinhTable = ({ data }) => {
+  return (
+    <>
+      {/* Phần đầu cố định */}
+      <Row key="session-11" className="d-flex d-none d-lg-block">
+        <div
+          className="mx-auto rounded-pill"
+          style={{
+            width: "55%", // Điều chỉnh chiều dài border-top
+            borderTop: "5px solid #fff",
+          }}
+        ></div>
+      </Row>
+
+      <Row
+        key="session-12"
+        className="d-flex align-items-center item-infodate"
+        style={{ paddingLeft: "13%" }}
+      >
+        <Col xs={12} sm={6} lg={5} className="date-time-lichtrinh">
+          <p
+            className="fs-1 fw-bold neonText date"
+            style={{ textAlign: "right" }}
+          >
+            31/05/2025
+          </p>
+          <div
+            className="w-50 text-center fs-4 fw-bold time"
+            style={{
+              textAlign: "right",
+              marginLeft: "auto",
+            }}
+          >
+            <span> - </span>
+            <span className="mx-5">Thứ 7</span>
+            <span> - </span>
+          </div>
+        </Col>
+
+        <ThanhDocTable height={120} />
+
+        <Col xs={12} sm={6} lg={5} className="date-time-lichtrinh">
+          <div
+            className="d-none d-lg-block"
+            style={{
+              width: "30%", // Điều chỉnh chiều dài border-top
+              borderRight: "3px solid #fff",
+            }}
+          ></div>
+          <p className="fs-1 fw-bold neonText date">01/06/2025</p>
+
+          <div className="w-50 text-center fs-4 fw-bold time">
+            <span> - </span>
+            <span className="mx-4">Chủ nhật</span>
+            <span> - </span>
+          </div>
+        </Col>
+      </Row>
+
+      {/* Duyệt qua dữ liệu và tạo phần tử */}
+      {data.map((session, index) => (
+        <Row
+          data-aos="flip-left"
+          key={`session-${index}`}
+          className="d-flex item-infodate lichtrinhtb"
+          style={{ paddingLeft: "13%" }}
+        >
+          {session.map((event, eventIndex) => (
+            <React.Fragment key={eventIndex}>
+              <Col xs={12} sm={6} lg={5} className="date-time-lichtrinh">
+                <div className="item-lichtrinh">
+                  <div className="item-datetime">
+                    <div
+                      style={{ width: "30%", borderRight: "3px solid #fff" }}
+                    ></div>
+                    <p
+                      className="fs-1 fw-bold mb-0 date"
+                      style={{
+                        textAlign: eventIndex % 2 === 0 ? "right" : "left",
+                      }}
+                    >
+                      {event.time}
+                    </p>
+                    <p
+                      className="fs-4 w-75 time"
+                      style={{
+                        textAlign: eventIndex % 2 === 0 ? "right" : "left",
+                        marginLeft: eventIndex % 2 === 0 ? "auto" : "0",
+                      }}
+                    >
+                      {event.name}
+                    </p>
+                  </div>
+                  <div
+                    className="item-address fs-5 w-75 address"
+                    style={{
+                      textAlign: eventIndex % 2 === 0 ? "right" : "left",
+                      marginLeft: eventIndex % 2 === 0 ? "auto" : "0",
+                      position: "absolute",
+                      right: eventIndex % 2 === 0 ? "0" : "none",
+                    }}
+                  >
+                    <i className="bi bi-pin-map"></i>
+                    <span> {event.address}</span>
+                  </div>
+                </div>
+              </Col>
+              {eventIndex % 2 === 0 && <ThanhDocTable index={eventIndex} />}
+            </React.Fragment>
+          ))}
+        </Row>
+      ))}
+    </>
+  );
+};
+
+import jsonLichTrinhMobile from "@/data/lichtrinh-dao.json";
+const EventSchedule = () => {
+  return (
+    <div>
+      {jsonLichTrinhMobile.map((event, index) => (
+        <div key={index}>
+          <Row>
+            <p className="fs-1 neonText">{event.date}</p>
+            <div>
+              <span>-</span>
+              <span className="mx-5 fs-5">{event.name}</span>
+              <span>-</span>
+            </div>
+          </Row>
+          {event.lst.map((item, idx) => (
+            <Row key={idx} className="my-4">
+              <div className="item-lichtrinh">
+                <div className="item-datetime">
+                  <p className="fw-bold fs-2 date">{item.time}</p>
+                  <p className="fs-4 time">{item.name}</p>
+                </div>
+                <p className="item-address address fs-5 pt-5">
+                  <i className="bi bi-pin-map"></i> {item.address}
+                </p>
+              </div>
+            </Row>
+          ))}
+        </div>
+      ))}
+    </div>
   );
 };
 
@@ -83,10 +236,14 @@ const events = [
 export default function TimeLine1() {
   return (
     <div
-      style={{ backgroundColor: "#001d5b", color: "white", padding: "20px" }}
+      id="lich-trinh"
+      className="bg-sec5"
+      style={{ color: "white", padding: "20px" }}
     >
       <Container>
         <h2
+          data-aos="fade-up"
+          data-aos-duration="3000"
           style={{
             textAlign: "center",
             textTransform: "uppercase",
@@ -111,22 +268,27 @@ export default function TimeLine1() {
           <p>Trường Đại học Khoa học, Đại học Huế</p>
         </div>
 
-        <div style={{ fontSize: "1.3rem", position: "relative" }}>
+        <div
+          className="timeline-center"
+          style={{ fontSize: "1.3rem", position: "relative" }}
+        >
           {events.map((event, index) => (
             <div
+              data-aos="fade-up"
               key={index}
               style={{
                 display: "flex",
                 alignItems: "flex-start",
-                marginBottom: "20px",
+                // marginBottom: "20px",
               }}
             >
               <div
+                className="fs-4"
                 style={{
                   textAlign: "right",
                   paddingRight: "30px",
                   flexShrink: 0,
-                  width: "130px",
+                  width: "150px",
                 }}
               >
                 <p style={{ margin: "0", fontWeight: "bold" }}>{event.month}</p>
@@ -160,9 +322,10 @@ export default function TimeLine1() {
                 </div>
                 {index < events.length - 1 && (
                   <div
+                    className="item-icon-doc"
                     style={{
                       width: "2px",
-                      height: "42px",
+                      height: "50px",
                       backgroundColor: "white",
                     }}
                   ></div>
@@ -176,151 +339,16 @@ export default function TimeLine1() {
           ))}
         </div>
 
-        <div className="text-light py-5">
+        {/* Web PC */}
+        <div className="text-light py-5 d-none d-lg-block">
           <Container>
-            <Row className="d-flex">
-              <div
-                className="mx-auto"
-                style={{
-                  width: "50%", // Điều chỉnh chiều dài border-top
-                  borderTop: "3px solid #fff",
-                }}
-              ></div>
-            </Row>
-
-            <Row
-              className="d-flex align-items-center"
-              style={{ paddingLeft: "13%" }}
-            >
-              <Col xs={12} sm={6} lg={5}>
-                <p
-                  className="fs-2 fw-bold neonText"
-                  style={{ textAlign: "right" }}
-                >
-                  31/05/2025
-                </p>
-                <p
-                  className="w-25 text-center"
-                  style={{
-                    textAlign: "right",
-                    marginLeft: "auto", // Đẩy phần tử sang phải
-                  }}
-                >
-                  - Thứ 7 -
-                </p>
-              </Col>
-              <ThanhDocTable />
-              <Col xs={12} sm={6} lg={5}>
-                <div
-                  style={{
-                    width: "30%", // Điều chỉnh chiều dài border-top
-                    borderRight: "3px solid #fff",
-                  }}
-                ></div>
-                <p
-                  className="fs-2 fw-bold neonText"
-                  style={{ textAlign: "left" }}
-                >
-                  01/06/2025
-                </p>
-                <p className="w-25 text-center" style={{ textAlign: "left" }}>
-                  - Chủ nhật -
-                </p>
-              </Col>
-            </Row>
-
-            <Row className="d-flex" style={{ paddingLeft: "13%" }}>
-              <Col xs={12} sm={6} lg={5}>
-                <p
-                  className="fs-2 fw-bold neonText mb-0"
-                  style={{ textAlign: "right" }}
-                >
-                  07:30
-                </p>
-                <p
-                  className="fs-4 w-75"
-                  style={{
-                    textAlign: "right",
-                    marginLeft: "auto", // Đẩy phần tử sang phải
-                  }}
-                >
-                  Tổ chức hội thảo liên kết đào tạo và lễ ký kết
-                </p>
-              </Col>
-
-              <ThanhDocTable />
-
-              <Col xs={12} sm={6} lg={5}>
-                <div className="item-lichtrinh">
-                  <div className="item-datetime">
-                    <div
-                      style={{ width: "30%", borderRight: "3px solid #fff" }}
-                    ></div>
-                    <p
-                      className="fs-2 fw-bold neonText mb-0"
-                      style={{ textAlign: "left" }}
-                    >
-                      07:30
-                    </p>
-                    <p className="fs-4 w-75" style={{ textAlign: "left" }}>
-                      Lễ mít tinh kỷ niệm 30 năm thành lập Khoa
-                    </p>
-                  </div>
-                  <div className="item-address fs-5 w-75">
-                    <i className="bi bi-pin-map"></i>
-                    <span>Sảnh A Trường Đại học Khoa học, Đại học Huế</span>
-                  </div>
-                </div>
-              </Col>
-            </Row>
-
-            <Row className="d-flex" style={{ paddingLeft: "13%" }}>
-              <Col xs={12} sm={6} lg={5}>
-                <p
-                  className="fs-2 fw-bold neonText mb-0"
-                  style={{ textAlign: "right" }}
-                >
-                  07:30
-                </p>
-                <p
-                  className="fs-4 w-75"
-                  style={{
-                    textAlign: "right",
-                    marginLeft: "auto", // Đẩy phần tử sang phải
-                  }}
-                >
-                  Tổ chức hội thảo liên kết đào tạo và lễ ký kết
-                </p>
-              </Col>
-
-              <ThanhDocTable />
-
-              <Col xs={12} sm={6} lg={5}>
-                <div className="item-lichtrinh">
-                  <div className="item-datetime">
-                    <div
-                      style={{ width: "30%", borderRight: "3px solid #fff" }}
-                    ></div>
-                    <p
-                      className="fs-2 fw-bold neonText mb-0"
-                      style={{ textAlign: "left" }}
-                    >
-                      07:30
-                    </p>
-                    <p className="fs-4 w-75" style={{ textAlign: "left" }}>
-                      Lễ mít tinh kỷ niệm 30 năm thành lập Khoa
-                    </p>
-                  </div>
-                  <div className="item-address fs-5 w-75">
-                    <i className="bi bi-pin-map"></i>
-                    <span>Sảnh A Trường Đại học Khoa học, Đại học Huế</span>
-                  </div>
-                </div>
-              </Col>
-            </Row>
-            <Row></Row>
-            <Row></Row>
+            <LichTrinhTable data={jsonLichTrinh}></LichTrinhTable>
           </Container>
+        </div>
+
+        {/* Mobile */}
+        <div className="text-light py-5 d-lg-none d-block text-center my-5">
+          <EventSchedule></EventSchedule>
         </div>
       </Container>
     </div>

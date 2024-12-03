@@ -1,6 +1,5 @@
 import { Row, Col, Container } from "react-bootstrap";
 import bg_sec1 from "@p/images/background/bg_banner.png";
-
 export default function Sec1() {
   return (
     <>
@@ -13,8 +12,9 @@ export default function Sec1() {
         }}
       >
         <Container>
-          <Row className="w-100">
+          <Row className="w-100 mx-auto">
             <Col
+              data-aos="fade-right"
               xs={12}
               md={8}
               className="d-flex align-items-center justify-content-center flex-column tl"
@@ -25,7 +25,7 @@ export default function Sec1() {
                   className="d-flex p-3 mb-3 "
                 >
                   <div
-                    className="glow-div me-4"
+                    className="glow-div me-4 line-chaomung"
                     style={{
                       backgroundColor: "#fff",
                       color: "transparent",
@@ -80,11 +80,16 @@ export default function Sec1() {
             </Col>
 
             <Col
+              data-aos="zoom-in"
               xs={12}
               md={4}
-              className="d-flex align-items-start justify-content-start"
+              className="d-flex justify-content-start item-logo"
             >
-              <img src="/images/logo/Logo_CNTT_30Nam.png" alt="Logo30Nam" />
+              <img
+                style={{ objectFit: "cover" }}
+                src="/images/logo/Logo_CNTT_30Nam.png"
+                alt="Logo30Nam"
+              />
             </Col>
           </Row>
         </Container>

@@ -1,11 +1,37 @@
 @import "./variables.css";
 @import "./custom.css";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.cdnfonts.com/css/monument");
+@font-face {
+  font-family: "Monument Extended";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Monument Extended"),
+    url("https://fonts.cdnfonts.com/s/19595/MonumentExtended-Regular.woff")
+      format("woff");
+}
+
+@font-face {
+  font-family: "Monument Extended";
+  font-style: normal;
+  font-weight: 800;
+  src: local("Monument Extended"),
+    url("https://fonts.cdnfonts.com/s/19595/MonumentExtended-Ultrabold.woff")
+      format("woff");
+}
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.font-monument {
+  font-family: "Monument Extended" !important;
 }
 
 :root {
@@ -53,7 +79,7 @@ h1 {
 }
 
 .bg-sec2 {
-  background-image: url("/images/background/BG_HUSC.jpg");
+  background-image: url("/images/background/bg_overview.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -61,7 +87,7 @@ h1 {
   position: relative;
 }
 
-.bg-sec2::before {
+/* .bg-sec2::before {
   content: "";
   position: absolute;
   top: 0;
@@ -72,10 +98,9 @@ h1 {
   opacity: 0.8;
   z-index: 1;
   backdrop-filter: blur(10px);
-  /* Hiệu ứng mờ */
-}
+} */
 
-.bg-sec2>* {
+.bg-sec2 > * {
   position: relative;
   z-index: 2;
   /* Để nội dung không bị che bởi lớp phủ */
@@ -92,6 +117,13 @@ h1 {
   }
 }
 
+@media (max-width: 1024px) {
+  .item-logo {
+    align-items: center !important;
+    margin: 0 auto;
+  }
+}
+
 .aninav {
   z-index: 100 !important;
   background-color: #061d5a !important;
@@ -99,7 +131,7 @@ h1 {
 }
 
 .bg-sec1 {
-  background-image: url("/images/background/bg_banner.png");
+  background-image: url("/images/background/bg_banner.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -108,7 +140,16 @@ h1 {
 }
 
 .bg-sec4 {
-  background-image: url("/images/background/bg_milestones.png");
+  background-image: url("/images/background/bg_milestones.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  position: relative;
+}
+
+.bg-sec5 {
+  background-image: url("/images/background/bg_timeline.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

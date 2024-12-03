@@ -13,7 +13,7 @@ const NavbarComponent = ({ activeSection }) => {
       <Container>
         <Navbar.Brand href="/">
           <Image
-            style={{ width: 90, height: 70 }}
+            style={{ width: 90, height: 70, objectFit: "cover" }}
             src="/images/logo/Logo_CNTT.png"
           />
         </Navbar.Brand>
