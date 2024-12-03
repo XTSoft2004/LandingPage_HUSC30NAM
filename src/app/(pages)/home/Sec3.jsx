@@ -62,7 +62,10 @@ export default function Sec1() {
         </Row>
         <Row data-aos="fade-up">
           <Row>
-            <div className="text-white fs-3 text-start title-center" style={{ textAlign: 'justify' }}>
+            <div
+              className="text-white fs-3 text-start title-center"
+              style={{ textAlign: "justify !important" }}
+            >
               Ngày 13/12/1994, Bộ Giáo dục và Đào tạo ký quyết định thành lập{" "}
               <span
                 className="fw-bold"
@@ -84,7 +87,10 @@ export default function Sec1() {
             </div>
           </Row>
           <Row>
-            <div className="text-white fs-3 mt-3" style={{ textAlign: 'justify' }}>
+            <div
+              className="text-white fs-3 mt-3"
+              style={{ textAlign: "justify !important" }}
+            >
               Với bề dày 30 năm xây dựng và phát triển, khoa đã đào tạo được số
               lượng lớn các cử nhân, thạc sĩ, tiến sĩ đang công tác trên mọi
               miền tổ quốc và thế giới, hướng tới đóng góp cho sự phát triển của
@@ -140,7 +146,7 @@ export default function Sec1() {
           />
           <div
             className="info-husc align-self-center position-absolute top-50 start-50 translate-middle d-flex justify-content-evenly align-items-center w-100 text-white"
-          // style={{ textShadow: "1px 1px 4px rgba(0, 0, 0, 0.8)" }}
+            // style={{ textShadow: "1px 1px 4px rgba(0, 0, 0, 0.8)" }}
           >
             {jsonNhungConSo.map((item, index) => (
               <ItemFace

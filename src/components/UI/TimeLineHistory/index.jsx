@@ -101,6 +101,7 @@ export default function TimeLineHistory() {
                   </div>
                   <div
                     className={`${style.timelineContent} fs-3 mt-1 align-self-center`}
+                    style={{ textAlign: "justify !important" }}
                   >
                     {milestone.description}
                   </div>
