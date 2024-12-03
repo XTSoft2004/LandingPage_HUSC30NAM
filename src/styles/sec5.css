@@ -1,0 +1,12 @@
+.item-lichtrinh {
+  position: relative;
+}
+.item-address {
+  position: absolute;
+  opacity: 0; /* Ban đầu ẩn */
+  transition: opacity 0.3s ease; /* Hiệu ứng chuyển đổi mượt */
+}
+
+.item-datetime:hover + .item-address {
+  opacity: 1; /* Hiển thị khi hover vào item-datetime */
+}
