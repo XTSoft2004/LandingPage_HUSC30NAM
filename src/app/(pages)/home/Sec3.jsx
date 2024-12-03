@@ -61,42 +61,38 @@ export default function Sec1() {
           </h1>
         </Row>
         <Row data-aos="fade-up">
-          <Row>
-            <div
-              className="text-white fs-3 text-start title-center"
-              style={{ textAlign: "justify !important" }}
+          <div
+            className="text-white fs-3 text-start title-center"
+            style={{ textAlign: "justify !important" }}
+          >
+            Ngày 13/12/1994, Bộ Giáo dục và Đào tạo ký quyết định thành lập{" "}
+            <span
+              className="fw-bold"
+              style={{ color: "var(--bg-yellow-base)" }}
             >
-              Ngày 13/12/1994, Bộ Giáo dục và Đào tạo ký quyết định thành lập{" "}
-              <span
-                className="fw-bold"
-                style={{ color: "var(--bg-yellow-base)" }}
-              >
-                khoa Công nghệ thông tin
-              </span>{" "}
-              (CNTT) thuộc trường Đại học Khoa học - Đại học Huế, một trong sáu
-              khoa CNTT trọng điểm trên toàn quốc. Tuy nhiên, khoa CNTT chính
-              thức hoạt động từ ngày{" "}
-              <span
-                className="fw-bold"
-                style={{ color: "var(--bg-yellow-base)" }}
-              >
-                01/06/1995
-              </span>{" "}
-              với 6 thành viên chuyển từ Bộ môn Toán Ứng dụng của Khoa Toán – Cơ
-              – Tin học.
-            </div>
-          </Row>
-          <Row>
-            <div
-              className="text-white fs-3 mt-3"
-              style={{ textAlign: "justify !important" }}
+              khoa Công nghệ thông tin
+            </span>{" "}
+            (CNTT) thuộc trường Đại học Khoa học - Đại học Huế, một trong sáu
+            khoa CNTT trọng điểm trên toàn quốc. Tuy nhiên, khoa CNTT chính thức
+            hoạt động từ ngày{" "}
+            <span
+              className="fw-bold"
+              style={{ color: "var(--bg-yellow-base)" }}
             >
-              Với bề dày 30 năm xây dựng và phát triển, khoa đã đào tạo được số
-              lượng lớn các cử nhân, thạc sĩ, tiến sĩ đang công tác trên mọi
-              miền tổ quốc và thế giới, hướng tới đóng góp cho sự phát triển của
-              đất nước và hội nhập quốc tế tích cực, sâu rộng.
-            </div>
-          </Row>
+              01/06/1995
+            </span>{" "}
+            với 6 thành viên chuyển từ Bộ môn Toán Ứng dụng của Khoa Toán – Cơ –
+            Tin học.
+          </div>
+          <div
+            className="text-white fs-3 mt-3"
+            style={{ textAlign: "justify !important" }}
+          >
+            Với bề dày 30 năm xây dựng và phát triển, khoa đã đào tạo được số
+            lượng lớn các cử nhân, thạc sĩ, tiến sĩ đang công tác trên mọi miền
+            tổ quốc và thế giới, hướng tới đóng góp cho sự phát triển của đất
+            nước và hội nhập quốc tế tích cực, sâu rộng.
+          </div>
         </Row>
         <Row className="my-5">
           <img
