@@ -134,7 +134,7 @@ const Footer = () => {
             </Col>
           </Row>
 
-          <Row className="py-2">
+          {/* <Row className="py-2">
             <div
               style={{
                 backgroundColor: "#fff",
@@ -148,6 +148,20 @@ const Footer = () => {
               Địa chỉ: Tầng 2 nhà G, Trường Đại học Khoa học, Đại học Huế, 77
               Nguyễn Huệ, thành phố Huế, tỉnh Thừa Thiên Huế.
             </Row>
+          </Row> */}
+        </Container>
+      </footer>
+      <footer
+        className="w-100 text-light p-3"
+        style={{ backgroundColor: "#07002B", borderTop: "2px solid #fff" }}
+      >
+        <Container>
+          <Row className="w-100">
+            Khoa Công nghệ thông tin - Trường Đại học Khoa học, Đại học Huế
+          </Row>
+          <Row>
+            Địa chỉ: Tầng 2 nhà G, Trường Đại học Khoa học, Đại học Huế, 77
+            Nguyễn Huệ, thành phố Huế, tỉnh Thừa Thiên Huế.
           </Row>
         </Container>
       </footer>
