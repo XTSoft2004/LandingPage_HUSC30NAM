@@ -1,0 +1,74 @@
+.item-lichtrinh {
+  position: relative; /* Để làm container cho các phần tử con */
+  padding-bottom: 2.5rem;
+}
+
+.item-datetime {
+  z-index: 1; /* Đảm bảo item-datetime nằm trên cùng */
+}
+
+.item-address {
+  position: absolute;
+  bottom: 0; /* Đặt item-address ở cuối container */
+  left: 0; /* Căn trái */
+  opacity: 0; /* Ban đầu ẩn */
+  transition: opacity 0.3s ease; /* Hiệu ứng mượt */
+  z-index: 0; /* Đảm bảo item-address không đè lên item-datetime */
+}
+
+.item-datetime:hover + .item-address {
+  opacity: 1; /* Hiển thị khi hover vào item-datetime */
+  color: var(--bg-yellow-base);
+}
+.timeline-center {
+  padding-left: 220px;
+}
+@media (max-width: 1020px) {
+  .item-infodate {
+    padding-left: 0 !important;
+    margin-bottom: 60px;
+  }
+  .date,
+  .time,
+  .address {
+    text-align: center !important;
+  }
+  .time,
+  .address {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  /* .address {
+    margin-bottom: 20px;
+  } */
+  /* .thanh-doc-line {
+    display: none;
+  } */
+  .lichtrinhtb {
+    align-items: center;
+  }
+  .item-icon-doc {
+    height: 160px !important;
+  }
+  .timeline-center {
+    padding-left: 0px;
+  }
+  .item-address {
+    bottom: -30px;
+  }
+}
+@media (max-width: 1350px) {
+  .time .address .date {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .lichtrinhtb,
+  .item-infodate {
+    justify-content: center;
+  }
+  /* .address {
+    margin-top: 100px !important;
+  } */
+}

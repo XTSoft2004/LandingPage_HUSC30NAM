@@ -1,6 +1,24 @@
 @import "./variables.css";
 @import "./custom.css";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.cdnfonts.com/css/monument");
+@font-face {
+  font-family: "Monument Extended";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Monument Extended"),
+    url("https://fonts.cdnfonts.com/s/19595/MonumentExtended-Regular.woff")
+      format("woff");
+}
+
+@font-face {
+  font-family: "Monument Extended";
+  font-style: normal;
+  font-weight: 800;
+  src: local("Monument Extended"),
+    url("https://fonts.cdnfonts.com/s/19595/MonumentExtended-Ultrabold.woff")
+      format("woff");
+}
 
 * {
   box-sizing: border-box;
@@ -8,17 +26,29 @@
   margin: 0;
 }
 
+body {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.font-monument {
+  font-family: "Monument Extended" !important;
+}
+
 :root {
   font-family: "Montserrat", sans-serif;
 }
 
 .glow-div {
-  background-color: #000; /* Màu nền để tăng tương phản */
-  color: #fff; /* Màu chữ */
+  background-color: #000;
+  /* Màu nền để tăng tương phản */
+  color: #fff;
+  /* Màu chữ */
   text-align: center;
-  border-radius: 10px; /* Bo góc cho đẹp hơn */
+  border-radius: 10px;
+  /* Bo góc cho đẹp hơn */
   box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #aaa, 0 0 18px #888,
-    0 0 30px #ddd, 0 0 40px #bbb; /* Hiệu ứng phát sáng */
+    0 0 30px #ddd, 0 0 40px #bbb;
+  /* Hiệu ứng phát sáng */
 }
 
 .neonText {
@@ -42,12 +72,14 @@ h1 {
 } */
 
 .navbar-active {
-  background-color: var(--bg-yellow-base) !important; /* Màu khi hover */
-  color: #000 !important; /* Màu chữ khi hover */
+  background-color: var(--bg-yellow-base) !important;
+  /* Màu khi hover */
+  color: #000 !important;
+  /* Màu chữ khi hover */
 }
 
 .bg-sec2 {
-  background-image: url("/images/background/BG_HUSC.jpg");
+  background-image: url("/images/background/bg_overview.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -55,20 +87,72 @@ h1 {
   position: relative;
 }
 
-.bg-sec2::before {
+/* .bg-sec2::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #000533; /* Màu xanh với opacity 0.3 */
+  background-color: #010632;
   opacity: 0.8;
   z-index: 1;
-  backdrop-filter: blur(10px); /* Hiệu ứng mờ */
-}
+  backdrop-filter: blur(10px);
+} */
 
 .bg-sec2 > * {
   position: relative;
-  z-index: 2; /* Để nội dung không bị che bởi lớp phủ */
+  z-index: 2;
+  /* Để nội dung không bị che bởi lớp phủ */
+}
+
+@media (max-width: 1024px) {
+  img {
+    width: 350px;
+    height: 350px;
+  }
+
+  .tl {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .item-logo {
+    align-items: center !important;
+    margin: 0 auto;
+  }
+}
+
+.aninav {
+  z-index: 100 !important;
+  background-color: #061d5a !important;
+  animation: down 0.7s forwards ease-in !important;
+}
+
+.bg-sec1 {
+  background-image: url("/images/background/bg_banner.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  position: relative;
+}
+
+.bg-sec4 {
+  background-image: url("/images/background/bg_milestones.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  position: relative;
+}
+
+.bg-sec5 {
+  background-image: url("/images/background/bg_timeline.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  position: relative;
 }
