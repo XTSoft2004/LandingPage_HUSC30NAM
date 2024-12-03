@@ -18,10 +18,8 @@ export default function RootLayout({ children }) {
 
   return (
     <html suppressHydrationWarning={true} lang="en">
-      <Head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <title>IT HUSC - 30 years anniversary</title>
-      </Head>
+      <link rel="icon" href="/favicon.ico" sizes="any" />
+      <title>IT HUSC - 30 years anniversary</title>
       <body>
         {children}
         <ScrollToTop />
