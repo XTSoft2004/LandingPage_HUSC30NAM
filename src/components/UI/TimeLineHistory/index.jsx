@@ -71,7 +71,7 @@ export default function TimeLineHistory() {
           <div className="d-flex justify-content-between align-items-center flex-column flex-md-row">
             <h1
               data-aos="fade-up"
-              data-aos-duration="3000"
+              data-aos-duration="1000"
               className="neonText text-center text-md-left text-uppercase"
               // style={{ width: "160px", fontSize: "40px" }}
             >

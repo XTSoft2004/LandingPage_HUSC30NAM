@@ -243,7 +243,7 @@ export default function TimeLine1() {
       <Container>
         <h2
           data-aos="fade-up"
-          data-aos-duration="3000"
+          data-aos-duration="1000"
           style={{
             textAlign: "center",
             textTransform: "uppercase",
