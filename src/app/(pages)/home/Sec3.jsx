@@ -16,7 +16,7 @@ import jsonNhungConSo from "@/data/nhungconsonoibat.json"; // Import the data if
 const ItemFace = ({ number, name, lst, showBorderLight }) => {
   return (
     <>
-      <div className="item-face text-center">
+      <div id="cac-moc-lich-su" className="item-face text-center">
         <div className="face-1">
           <h1
             style={{
@@ -47,7 +47,7 @@ const ItemFace = ({ number, name, lst, showBorderLight }) => {
     </>
   );
 };
-export default function Sec1({ name, children }) {
+export default function Sec1() {
   return (
     <div id="sec-2" className="w-100 bg-sec2 py-3">
       <Container>

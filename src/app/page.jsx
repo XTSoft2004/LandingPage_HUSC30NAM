@@ -10,6 +10,7 @@ import Sec1 from "./(pages)/home/Sec1";
 import Sec2 from "./(pages)/home/Sec2";
 import Sec3 from "./(pages)/home/Sec3";
 import Sec4 from "./(pages)/home/Sec4";
+import Sec5 from "./(pages)/home/Sec5";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState(""); // Trạng thái section hiện tại
@@ -52,6 +53,9 @@ export default function Home() {
       <Sec3 />
       <section ref={ref2}>
         <Sec4 />
+      </section>
+      <section ref={ref3}>
+        <Sec5 />
       </section>
       <Footer />
     </>
