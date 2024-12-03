@@ -82,7 +82,6 @@ export default function TimeLineHistory() {
               src="/images/logo/Logo_Official.png"
               alt="Logo"
               className={`${style.logo} mt-3 mt-md-0 d-none d-lg-block`}
-              style={{ objectFit: "cover" }}
             />
           </div>
           <div className={`${style.bo} glow-div mb-4`}></div>
