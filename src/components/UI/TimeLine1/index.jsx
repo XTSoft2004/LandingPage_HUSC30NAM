@@ -1,32 +1,51 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Row, Col, Container } from "react-bootstrap";
 import "@/styles/sec5.css";
-const ThanhDocTable = ({ index, height = 0 }) => {
+const ThanhDocTable = ({ index, dynamicHeight }) => {
   return (
-    <>
-      <Col
-        key={index}
-        xs={12}
-        sm={6}
-        lg={2}
-        className="d-flex justify-content-center"
-        style={{ width: "20px" }}
-      >
-        <div
-          className="d-none d-lg-block"
-          style={{
-            height: height == 0 ? "auto" : height, // Chiều cao của thanh dọc
-            borderLeft: "5px solid #fff", // Đường viền dọc
-          }}
-        ></div>
-      </Col>
-    </>
+    <Col
+      key={index}
+      xs={12}
+      sm={6}
+      lg={2}
+      className="d-flex justify-content-center"
+      style={{ width: "20px", height: "auto" }}
+    >
+      <div
+        className="d-none d-lg-block"
+        style={{
+          height: dynamicHeight || "auto", // Chiều cao tính toán
+          borderLeft: "5px solid #fff", // Đường viền dọc
+        }}
+      ></div>
+    </Col>
   );
 };
 
 import jsonLichTrinh from "@/data/lichtrinh.json"; // Import the data if it's in a separate JSON file
 
 const LichTrinhTable = ({ data }) => {
+  const refs = useRef([]); // Dùng để lưu các tham chiếu đến các phần tử
+
+  const [dynamicHeights, setDynamicHeights] = useState([]);
+
+  useEffect(() => {
+    const heights = [];
+    refs.current.forEach((ref, index) => {
+      if (ref) {
+        const prevDiv = refs.current[index - 1];
+        const nextDiv = refs.current[index + 1];
+        if (prevDiv && nextDiv) {
+          // Tính toán chiều cao giữa 2 div
+          const prevBottom = prevDiv.getBoundingClientRect().bottom;
+          const nextTop = nextDiv.getBoundingClientRect().top;
+          heights[index] = nextTop - prevBottom;
+        }
+      }
+    });
+    setDynamicHeights(heights);
+  }, [data]); // Chạy lại khi `data` thay đổi
+
   return (
     <>
       {/* Phần đầu cố định */}
@@ -65,7 +84,7 @@ const LichTrinhTable = ({ data }) => {
           </div>
         </Col>
 
-        <ThanhDocTable height={120} />
+        <ThanhDocTable dynamicHeight={150} />
 
         <Col xs={12} sm={6} lg={5} className="date-time-lichtrinh">
           <div
@@ -84,60 +103,66 @@ const LichTrinhTable = ({ data }) => {
           </div>
         </Col>
       </Row>
-
-      {/* Duyệt qua dữ liệu và tạo phần tử */}
-      {data.map((session, index) => (
-        <Row
-          data-aos="flip-left"
-          key={`session-${index}`}
-          className="d-flex item-infodate lichtrinhtb"
-          style={{ paddingLeft: "13%" }}
-        >
-          {session.map((event, eventIndex) => (
-            <React.Fragment key={eventIndex}>
-              <Col xs={12} sm={6} lg={5} className="date-time-lichtrinh">
-                <div className="item-lichtrinh">
-                  <div className="item-datetime">
+      <div style={{ marginLeft: "-0.5px" }}>
+        {/* Duyệt qua dữ liệu và tạo phần tử */}
+        {data.map((session, index) => (
+          <Row
+            data-aos="flip-left"
+            key={`session-${index}`}
+            className="d-flex item-infodate lichtrinhtb"
+            style={{ paddingLeft: "13%" }}
+          >
+            {session.map((event, eventIndex) => (
+              <React.Fragment key={eventIndex}>
+                <Col xs={12} sm={6} lg={5} className="date-time-lichtrinh">
+                  <div className="item-lichtrinh">
+                    <div className="item-datetime">
+                      <div
+                        style={{ width: "30%", borderRight: "3px solid #fff" }}
+                      ></div>
+                      <p
+                        className="fs-1 fw-bold mb-0 date"
+                        style={{
+                          textAlign: eventIndex % 2 === 0 ? "right" : "left",
+                        }}
+                      >
+                        {event.time}
+                      </p>
+                      <p
+                        className="fs-4 w-75 time"
+                        style={{
+                          textAlign: eventIndex % 2 === 0 ? "right" : "left",
+                          marginLeft: eventIndex % 2 === 0 ? "auto" : "0",
+                        }}
+                      >
+                        {event.name}
+                      </p>
+                    </div>
                     <div
-                      style={{ width: "30%", borderRight: "3px solid #fff" }}
-                    ></div>
-                    <p
-                      className="fs-1 fw-bold mb-0 date"
-                      style={{
-                        textAlign: eventIndex % 2 === 0 ? "right" : "left",
-                      }}
-                    >
-                      {event.time}
-                    </p>
-                    <p
-                      className="fs-4 w-75 time"
+                      className="item-address fs-5 w-75 address"
                       style={{
                         textAlign: eventIndex % 2 === 0 ? "right" : "left",
                         marginLeft: eventIndex % 2 === 0 ? "auto" : "0",
+                        position: "absolute",
+                        right: eventIndex % 2 === 0 ? "0" : "none",
                       }}
                     >
-                      {event.name}
-                    </p>
+                      <i className="bi bi-pin-map"></i>
+                      <span> {event.address}</span>
+                    </div>
                   </div>
-                  <div
-                    className="item-address fs-5 w-75 address"
-                    style={{
-                      textAlign: eventIndex % 2 === 0 ? "right" : "left",
-                      marginLeft: eventIndex % 2 === 0 ? "auto" : "0",
-                      position: "absolute",
-                      right: eventIndex % 2 === 0 ? "0" : "none",
-                    }}
-                  >
-                    <i className="bi bi-pin-map"></i>
-                    <span> {event.address}</span>
-                  </div>
-                </div>
-              </Col>
-              {eventIndex % 2 === 0 && <ThanhDocTable index={eventIndex} />}
-            </React.Fragment>
-          ))}
-        </Row>
-      ))}
+                </Col>
+                {eventIndex % 2 === 0 && (
+                  <ThanhDocTable
+                    index={eventIndex}
+                    dynamicHeight={dynamicHeights[eventIndex]}
+                  />
+                )}
+              </React.Fragment>
+            ))}
+          </Row>
+        ))}
+      </div>
     </>
   );
 };
@@ -249,12 +274,13 @@ export default function TimeLine1() {
             textTransform: "uppercase",
             fontSize: "5.0rem",
           }}
-          className="neonText"
+          className="neonText py-3"
         >
           Lịch Trình
         </h2>
 
         <div
+          className="py-3"
           data-aos="fade-up"
           style={{
             textAlign: "center",

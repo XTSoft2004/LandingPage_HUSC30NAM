@@ -87,7 +87,7 @@ export default function TimeLineHistory() {
           <div className={`${style.bo} glow-div mb-4`}></div>
           <Row>
             {data.map((milestone, index) => (
-              <Col div data-aos="fade-up" key={index} xs={12}>
+              <Col data-aos="fade-up" key={index} xs={12}>
                 <div className={style.timelineItem}>
                   <div
                     className={`${style.timelineDate} fw-bold text-uppercase`}
@@ -112,12 +112,10 @@ export default function TimeLineHistory() {
           <Row className="d-flex flex-md-row flex-column mt-3">
             <Col>
               <Image
-                style={{ objectFit: "cover" }}
                 className="d-none d-md-block w-75 align-self-center py-4"
                 src="/images/background/flag.png"
               ></Image>
               <Image
-                style={{ objectFit: "cover" }}
                 className="d-md-none d-block w-100 align-self-center py-4"
                 src="/images/background/flag.png"
               ></Image>
