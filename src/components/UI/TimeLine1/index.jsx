@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Row, Col, Container } from "react-bootstrap";
-import "@/styles/sec5.css";
+import "./timeline.css";
 const ThanhDocTable = ({ index, dynamicHeight }) => {
   return (
     <Col
@@ -9,12 +9,12 @@ const ThanhDocTable = ({ index, dynamicHeight }) => {
       sm={6}
       lg={2}
       className="d-flex justify-content-center"
-      style={{ width: "20px", height: "auto" }}
+      style={{ width: "20px", height: dynamicHeight }}
     >
       <div
         className="d-none d-lg-block"
         style={{
-          height: dynamicHeight || "auto", // Chiều cao tính toán
+          height: dynamicHeight, // Chiều cao tính toán
           borderLeft: "5px solid #fff", // Đường viền dọc
         }}
       ></div>
@@ -72,15 +72,15 @@ const LichTrinhTable = ({ data }) => {
             31/05/2025
           </p>
           <div
-            className="w-50 text-center fs-4 fw-bold time"
+            className="w-50 text-center fs-4 fw-bold time d-flex"
             style={{
               textAlign: "right",
               marginLeft: "auto",
             }}
           >
-            <span> - </span>
+            <span className="d-none d-lg-block"> - </span>
             <span className="mx-5">Thứ 7</span>
-            <span> - </span>
+            <span className="d-none d-lg-block"> - </span>
           </div>
         </Col>
 
@@ -96,10 +96,10 @@ const LichTrinhTable = ({ data }) => {
           ></div>
           <p className="fs-1 fw-bold neonText date">01/06/2025</p>
 
-          <div className="w-50 text-center fs-4 fw-bold time">
-            <span> - </span>
+          <div className="w-50 text-center fs-4 fw-bold time d-flex">
+            <span className="d-none d-lg-block"> - </span>
             <span className="mx-4">Chủ nhật</span>
-            <span> - </span>
+            <span className="d-none d-lg-block"> - </span>
           </div>
         </Col>
       </Row>
@@ -252,6 +252,7 @@ const events = [
           fill="#001d5b"
           d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"
         />
+        ``
       </svg>
     ),
     description: "Cuộc thi lập trình OLP/ICPC Khoa Công nghệ thông tin",

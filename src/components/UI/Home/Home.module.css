@@ -1,6 +1,13 @@
 @media (max-width: 750px) {
+  .item-title {
+    display: flex;
+    flex-direction: row !important;
+  }
   .line-chaomung {
     height: 150px !important;
   }
 
+  .title {
+    font-size: 3rem !important;
+  }
 }

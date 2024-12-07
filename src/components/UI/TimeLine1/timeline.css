@@ -40,16 +40,16 @@
     margin-right: 0 !important;
   }
   /* .address {
-    margin-bottom: 20px;
-  } */
+      margin-bottom: 20px;
+    } */
   /* .thanh-doc-line {
-    display: none;
-  } */
+      display: none;
+    } */
   .lichtrinhtb {
     align-items: center;
   }
   .item-icon-doc {
-    height: 160px !important;
+    height: 220px !important;
   }
   .timeline-center {
     padding-left: 0px;
@@ -69,6 +69,6 @@
     justify-content: center;
   }
   /* .address {
-    margin-top: 100px !important;
-  } */
+      margin-top: 100px !important;
+    } */
 }

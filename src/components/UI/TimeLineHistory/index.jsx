@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect } from "react";
+import React from "react";
 import { Row, Col, Image } from "react-bootstrap";
 import style from "./timeline.module.css";
 
@@ -101,7 +101,6 @@ export default function TimeLineHistory() {
                   </div>
                   <div
                     className={`${style.timelineContent} fs-3 mt-1 align-self-center`}
-                    style={{ textAlign: "justify !important" }}
                   >
                     {milestone.description}
                   </div>
@@ -109,7 +108,10 @@ export default function TimeLineHistory() {
               </Col>
             ))}
           </Row>
-          <Row className="d-flex flex-md-row flex-column mt-3">
+          <Row
+            data-aos="fade-in"
+            className="d-flex flex-md-row flex-column mt-3"
+          >
             <Col>
               <Image
                 className="d-none d-md-block w-75 align-self-center py-4"
@@ -122,6 +124,7 @@ export default function TimeLineHistory() {
             </Col>
             <Col>
               <div
+                data-aos="fade-in"
                 className={`${style.text} py-3 font-monument`}
                 style={{
                   textAlign: "right",
