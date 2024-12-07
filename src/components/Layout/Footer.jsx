@@ -142,7 +142,7 @@ const Footer = () => {
                 height: "1px",
               }}
             ></div>
-            <Row className="mt-2">
+            <Row className="my-2">
               Khoa Công nghệ thông tin - Trường Đại học Khoa học, Đại học Huế
             </Row>
             <Row>
@@ -157,7 +157,7 @@ const Footer = () => {
         style={{ backgroundColor: "#061d5a" }}
       >
         <Container>
-          <Row className="w-100">
+          <Row className="w-100 mb-2">
             Copyright © 2024, Trần Xuân Trường, Trương Đình Phúc, Lê Nguyễn Gia
             Hân
           </Row>
