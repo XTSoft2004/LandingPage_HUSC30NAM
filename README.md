@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LandingPage HUSC 30 Year
 
-## Getting Started
+## Giới thiệu
 
-First, run the development server:
+Dự án này được tạo ra để kỷ niệm 30 năm thành lập Khoa Công nghệ Thông tin, Trường Đại học Khoa học, Đại học Huế. Đây là một trang landing page đơn giản được xây dựng bằng Next.js.
+
+## Tính năng
+- Giao diện thân thiện với người dùng
+- Tối ưu hóa cho các thiết bị di động
+
+## Cài đặt
+
+Để bắt đầu với dự án này, bạn cần cài đặt Node.js và npm. Sau đó, làm theo các bước sau:
+
+### Clone repository:
+
+```bash
+git clone https://github.com/XTSoft2004/LandingPage_HUSC30NAM.git
+```
+
+### Chuyển đến thư mục dự án:
+```bash
+cd LandingPage_HUSC30NAM
+```
+
+### Cài đặt các phụ thuộc:
+
+```bash
+npm install
+```
+
+### Chạy máy chủ phát triển:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Mở trình duyệt và truy cập:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Mở http://localhost:3000 để xem kết quả.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Hướng dẫn sử dụng
 
-## Learn More
+Bạn có thể bắt đầu chỉnh sửa trang bằng cách thay đổi tệp app/page.js.
+Trang sẽ tự động cập nhật khi bạn chỉnh sửa tệp.
+## Triển khai
 
-To learn more about Next.js, take a look at the following resources:
+Cách dễ nhất để triển khai ứng dụng Next.js của bạn là sử dụng nền tảng Vercel. Bạn có thể tham khảo tài liệu triển khai Next.js để biết thêm chi tiết.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📄 Giấy phép
 
-## Deploy on Vercel
+Dự án được phát hành theo giấy phép [MIT License](LICENSE).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📬 Liên hệ
+
+- 💻 **Facebook**: [Trần Xuân Trường](https://www.facebook.com/xuantruong.war.clone.code)  
+- ✉️ **Email**: tranxuantruong420@gmail.com
+
+---
+
+> 🧠 Copyright © 2024 — SPIT Team 💙
