@@ -18,6 +18,7 @@ Dự án này được tạo ra để kỷ niệm 30 năm thành lập Khoa Côn
 git clone https://github.com/XTSoft2004/LandingPage_HUSC30NAM.git
 ```
 
+
 ### Chuyển đến thư mục dự án:
 ```bash
 cd LandingPage_HUSC30NAM
