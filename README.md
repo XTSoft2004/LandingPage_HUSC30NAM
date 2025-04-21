@@ -1,14 +1,21 @@
-# LandingPage HUSC 30 Year
+# Landing page IT HUSC 30 years
 
-## Giới thiệu
+## 🌐 Giới thiệu
 
-Dự án này được tạo ra để kỷ niệm 30 năm thành lập Khoa Công nghệ Thông tin, Trường Đại học Khoa học, Đại học Huế. Đây là một trang landing page đơn giản được xây dựng bằng Next.js.
+Dự án đạt giải Nhì cuộc thi thiết kế landing page chào mừng 30 năm thành lập khoa Công nghệ thông tin, trường Đại học Khoa học, Đại học Huế, được xây dựng bằng Next.js. 
 
-## Tính năng
+🔗 https://ithusc-30yrs.vercel.app/
+
+## 👨‍💼👩‍💼 Thành viên
+- Trần Xuân Trường - Nhóm trưởng
+- Lê Nguyễn Gia Hân
+- Trương Đình Phúc
+
+## ✨ Tính năng
 - Giao diện thân thiện với người dùng
 - Tối ưu hóa cho các thiết bị di động
 
-## Cài đặt
+## 🛠️ Cài đặt
 
 Để bắt đầu với dự án này, bạn cần cài đặt Node.js và npm. Sau đó, làm theo các bước sau:
 
